@@ -10,6 +10,11 @@
 			"placeholder": "Preferred language code (e.g. en, fr, es)"
 		},
 		{
+			"field": "params.hide_avatar",
+			"label": "Hide header avatar",
+			"type": "boolean"
+		},
+		{
 		  "field": "params.custom_avatar",
 		  "label": "Custom header icon",
 		  "type": "text",
