@@ -42,7 +42,7 @@
 
 	{{- range .Pages }}
 	<div class="post">
-		<a href="{{ .Permalink }}" class="microblog_permalink">{{- if .Site.Params.use_short_date }}{{ .Date | time.Format ":date_medium" }}{{- else }}{{ .Date | time.Format ":date_full" }}{{- end }}</a>
+		<a href="{{ .Permalink }}" class="microblog_permalink">{{- if .Site.Params.use_short_date }}{{ .Date.Format ":date_medium" }}{{- else }}{{ .Date.Format ":date_full" }}{{- end }}</a>
 		{{- if .Title }}
 		<h3>{{ .Title }}</h3>
 		{{- end }}
