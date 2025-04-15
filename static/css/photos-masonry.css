@@ -15,14 +15,14 @@ main.photos-wide {
 }
 
 main.photos .masonry-grid,
-main.photos .masonry-grid-wide {
+main.photos-wide .masonry-grid {
 	padding: 0;
 	margin: 0;
 	list-style: none;
 	column-count: 3;
 	column-gap: 1rem;
 }
-main.photos .masonry-grid-wide {
+main.photos-wide .masonry-grid {
 	column-count: 4;
 }
 
