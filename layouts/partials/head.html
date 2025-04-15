@@ -1,0 +1,26 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="view-transition" content="same-origin" />
+  {{- $creator := .Site.Params.fediverse_creator }}
+  {{- if $creator }}
+  <meta name="fediverse:creator" content="{{ $creator }}" />
+  {{- end }}
+  <title>{{- block "title" . -}}{{- .Site.Title -}}{{- if and .Title (ne .Title .Site.Title) }} | {{ .Title }}{{- end -}}{{- end -}}</title>
+  {{ partial "opengraph.html" }}
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="author" href="humans.txt" />
+  <link rel="preload" href="/fonts/GT-W-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+  <link rel="preload" href="/fonts/GT-W-Regular-Oblique.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+  <link rel="preload" href="/fonts/GT-W-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+  <link rel="preload" href="/fonts/GT-W-Bold-Oblique.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+  <link href="{{ "css/fonts.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="preload stylesheet preconnect" as="style">
+  <link href="{{ "css/main.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="preload stylesheet preconnect" as="style">
+  {{- if .Site.Params.masonry_layout }}
+  <link href="{{ "css/photos-masonry.css" | relURL }}?{{ .Site.Params.theme_seconds }}"rel="preload stylesheet preconnect" as="style">
+  {{- else }}
+  <link href="{{ "css/photos-grid.css" | relURL }}?{{ .Site.Params.theme_seconds }}"rel="preload stylesheet preconnect" as="style">
+  {{- end }}
+  {{ partial "microblog_head.html" . }}
+</head>
