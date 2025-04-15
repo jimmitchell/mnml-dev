@@ -17,19 +17,19 @@
 		{
 		  "field": "params.custom_avatar",
 		  "label": "Custom header icon",
-		  "type": "text",
+		  "type": "string",
 		  "placeholder": "Enter a full URL to an image"
 		},
 		{
 		  "field": "params.fediverse_creator",
 		  "label": "Fediverse creator",
-		  "type": "text",
+		  "type": "string",
 		  "placeholder": "@username@mastodon.instance"
 		},
 		{
 		  "field": "params.home_category",
 		  "label": "Home page categories",
-		  "type": "text",
+		  "type": "string",
 		  "placeholder": "Home page categories. Leave blank for all posts."
 		},
 		{
@@ -40,7 +40,7 @@
 		{
 		  "field": "params.photos_category",
 		  "label": "Photos category",
-		  "type": "text",
+		  "type": "string",
 		  "placeholder": "Set a single photo category. Leave blank for all images."
 		},
 		{
