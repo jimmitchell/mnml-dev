@@ -18,13 +18,7 @@
 			<h3 class="archive-range">{{ .Key }}</h3>
 			{{- range .Pages }}
 			<p class="post-date">
-				<a href="{{ .Permalink }}">
-					{{- if .Site.Params.use_short_date }}
-					{{ .Date.Format ":date_medium" }}
-					{{- else }}
-					{{ .Date.Format ":date_full" }}
-					{{- end }} →
-				</a>
+				<a href="{{ .Permalink }}">{{- if .Site.Params.use_short_date }}{{ .Date | time.Format ":date_medium" }}{{- else }}{{ .Date | time.Format ":date_full" }}{{- end }} →</a>
 			</p>
 			<div class="entry">
 				<p>{{- if .Title }}<b>{{ .Title }}:</b>&nbsp;{{- end }}{{ .Summary | safeHTML | truncate 300  }}</p>
