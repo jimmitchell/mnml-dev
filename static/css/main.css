@@ -690,6 +690,25 @@ main.archive .entry p {
   padding: 0;
 }
 
+#guestbooks___guestbook-made-with {
+  color: var(--accent-3);
+}
+
+#guestbooks___guestbook-messages-container blockquote {
+  border: none;
+  color: var(--text);
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+#guestbooks___guestbook-messages-container > div {
+  background: var(--accent-1);
+  border-radius: var(--border-radius);
+  margin: 1.5rem 0;
+  padding: 0.1rem 3rem 2rem;
+}
+
 footer {
   color: var(--accent-3);
   font-size: 1.6rem;
