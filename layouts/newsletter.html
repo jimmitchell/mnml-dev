@@ -47,20 +47,20 @@
 		<h3>{{ .Title }}</h3>
 		{{- end }}
 		{{ .Summary }}
-		<p><a href="{{ .Permalink }}">{{ T "Continue reading online" }} →</a></p>
+		<p><a href="{{ .Permalink }}">Continue reading online →</a></p>
 		{{- if gt (len .Params.audio) 0 }}
-		<a href="{ .Permalink }">{{ T "Audio" }}</a>
+		<a href="{ .Permalink }">Audio</a>
 		{{- end }}
 		{{- if gt (len .Params.video) 0 }}
-		<a href="{ .Permalink }">{{ T "Video" }}</a>
+		<a href="{ .Permalink }">Video</a>
 		{{- end }}
 	</div>
 	{{- end }}
 	<div class="footer">
-		<a href="{{ .Footer.UnsubscribeURL }}">{{ T "Unsubscribe" }}</a> | 
+		<a href="{{ .Footer.UnsubscribeURL }}">Unsubscribe</a> | 
 		{{- if eq (len .Pages) 1 }}
 		{{- with index .Pages 0 }}
-		<a href="{{ .Permalink }}">{{ T "View in browser" }}</a> | 
+		<a href="{{ .Permalink }}">View in browser</a> | 
 		{{- end }}
 		{{- end }}
 		<a href="{{ .Site.BaseURL }}">{{ .Site.Hostname }}</a>
