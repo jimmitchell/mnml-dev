@@ -242,7 +242,7 @@ code {
   background: var(--text);
   border-radius: var(--border-radius);
   color: var(--background);
-  padding: 3px;
+  padding: 3px 6px;
 }
 
 pre code {
@@ -544,8 +544,8 @@ a.category:active {
 .microblog_post {
   margin-bottom: 1rem;
   padding: 2.3rem 2rem;
-  border: 1px solid var(--accent-2);
-  border-radius: 1rem;
+  background: var(--accent-1);
+  border-radius: var(--border-radius);
 }
 
 .microblog_conversation .microblog_post {
@@ -553,12 +553,12 @@ a.category:active {
 }
 
 .microblog_user {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
 }
 
 .microblog_fullname {
-  font-weight: var(--font-weight-bold);
-  font-size: 1.6rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.7rem;
   margin-left: 6px;
   display: inline-block;
   line-height: 30px;
@@ -583,7 +583,7 @@ a.category:active {
 .microblog_time a,
 .microblog_time a:visited {
   color: var(--accent-3);
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   text-decoration: none;
 }
 
@@ -600,14 +600,13 @@ a.category:active {
 }
 
 .microblog_reply_form {
-  border: 1px solid var(--accent-2);
   background: var(--accent-1);
   padding: 1rem 2rem;
-  border-radius: 1rem;
+  border-radius: var(--border-radius);
 }
 
 .microblog_reply_signin {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   margin-top: .75rem;
 }
 
@@ -639,7 +638,7 @@ a.category:active {
 
 .microblog_reply_button {
   text-align: right;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   margin-top: -.75rem;
   margin-bottom: .75rem;
 }
