@@ -13,7 +13,7 @@
 		</div>
 		{{- end }}
 		{{- $posts := where  .Site.RegularPages "Type" "post" }}
-		{{- $grouped := $posts.GroupByDate "January 2006" }}
+		{{- $grouped := $posts.GroupByDate }}
 		{{- range $grouped }}
 			<h3 class="archive-range">{{ .Key }}</h3>
 			{{- range .Pages }}
