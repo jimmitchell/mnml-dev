@@ -242,7 +242,8 @@ code {
   background: var(--text);
   border-radius: var(--border-radius);
   color: var(--background);
-  padding: 3px 6px;
+  padding: 2px 4px;
+  white-space: nowrap;
 }
 
 pre code {
@@ -250,6 +251,7 @@ pre code {
   border: none;
   color: inherit;
   padding: 0;
+  white-space: pre;
 }
 
 div.highlight pre {
