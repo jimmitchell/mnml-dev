@@ -74,14 +74,14 @@ main.photos-wide .masonry-grid {
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 	main.photos .masonry-grid,
 	main.photos-wide .masonry-grid {
 		column-count: 2;
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 375px) {
 	main.photos .masonry-grid,
 	main.photos-wide .masonry-grid {
 		column-count: 1;
