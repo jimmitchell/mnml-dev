@@ -467,7 +467,7 @@ a.category:visited {
   color: var(--accent-3);
   border: 1px solid var(--accent-1);
   background-color: var(--accent-1);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   border-radius: var(--border-radius);
   padding: 1px 8px;
   display: inline-block;
@@ -775,7 +775,7 @@ a.reply-on-mastodon,
 a.reply-by-email {
   text-decoration: none;
   color: var(--accent-3);
-  border: 1px solid var(--accent-2);
+  border: 1px solid var(--accent-1);
   background-color: var(--accent-1);
   font-size: 1.4rem;
   border-radius: var(--border-radius);
@@ -794,8 +794,8 @@ a.reply-by-email:active,
 a.conversation-on-mb:active,
 a.reply-on-mastodon:active,
 .did_select {
-  border: 1px solid var(--text);
-  background: var(--text);
+  border: 1px solid var(--link);
+  background: var(--link);
   color: var(--background);
 }
 
