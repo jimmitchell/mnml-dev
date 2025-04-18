@@ -42,5 +42,8 @@
   {{- else }}
   <link href="{{ "css/photos-grid.css" | relURL }}?{{ .Site.Params.theme_seconds }}"rel="preload stylesheet preconnect" as="style">
   {{- end }}
+  {{- if .Site.Params.narrow_header }}
+  <style>.site-nav {max-width:var(--site-width)}</style>
+  {{- end }}
   {{ partial "microblog_head.html" . }}
 </head>
