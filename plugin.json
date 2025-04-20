@@ -1,5 +1,5 @@
 {
-	"version": "2.4.0",
+	"version": "2.4.3",
 	"title": "mnml-dev",
 	"description": "A minimal, simple and clean Micro.blog theme.",
 	"fields": [
@@ -7,7 +7,18 @@
 			"field": "defaultContentLanguage",
 			"label": "Site Language",
 			"type": "string",
-			"placeholder": "Preferred language code (e.g. en, fr, es)"
+			"placeholder": "Preferred language code (e.g. de, fr, es)."
+		},
+		{
+		  "field": "params.fediverse_creator",
+		  "label": "Fediverse creator",
+		  "type": "string",
+		  "placeholder": "@username@mastodon.instance"
+		},
+		{
+		  "field": "params.narrow_header",
+		  "label": "Use a narrow site header",
+		  "type": "boolean"
 		},
 		{
 			"field": "params.hide_avatar",
@@ -18,23 +29,7 @@
 		  "field": "params.custom_avatar",
 		  "label": "Custom header icon",
 		  "type": "string",
-		  "placeholder": "Enter a full URL to an image"
-		},
-		{
-		  "field": "params.fediverse_creator",
-		  "label": "Fediverse creator",
-		  "type": "string",
-		  "placeholder": "@username@mastodon.instance"
-		},
-		{
-		  "field": "params.narrow_header",
-		  "label": "Use a narrower site header",
-		  "type": "boolean"
-		},
-		{
-		  "field": "params.show_full_post",
-		  "label": "Show full posts on homepage",
-		  "type": "boolean"
+		  "placeholder": "Enter a full URL to an image."
 		},
 		{
 		  "field": "params.home_category",
@@ -49,13 +44,18 @@
 		  "placeholder": "Set a single photo category. Leave blank for all images."
 		},
 		{
+		  "field": "params.show_full_post",
+		  "label": "Show full posts on homepage",
+		  "type": "boolean"
+		},
+		{
 		  "field": "params.masonry_layout",
 		  "label": "Use photos masonry layout",
 		  "type": "boolean"
 		},
 		{
 		  "field": "params.full_width_photos",
-		  "label": "Show wider photos page",
+		  "label": "Show a wider photos page",
 		  "type": "boolean"
 		},
 		{
