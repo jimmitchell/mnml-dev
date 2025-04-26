@@ -7,22 +7,12 @@
 {{- $len := (len $list) -}}
 {{ range $index, $value := $list }}
 	{{- if .Params.photos -}}
-		{{ if .Site.Params.all_photos }}
-			{{ range .Params.photos }}
-				<li>
-					<a href="{{ $.Permalink }}"> <!-- Use $.Permalink to reference the post permalink -->
-						<img src="{{ . }}" loading="lazy" />
-					</a>
-				</li>
-			{{ end }}
-		{{ else }}
-			{{ with first 1 .Params.photos }}
-				<li>
-					<a href="{{ $.Permalink }}"> <!-- Use $.Permalink to reference the post permalink -->
-						<img src="{{ . }}" loading="lazy" />
-					</a>
-				</li>
-			{{ end }}
+		{{ range .Params.photos }}
+			<li>
+				<a href="{{ $.Permalink }}"> <!-- Use $.Permalink to reference the post permalink -->
+					<img src="{{ . }}" loading="lazy" />
+				</a>
+			</li>
 		{{ end }}
 	{{- end -}}
 {{- end -}}
