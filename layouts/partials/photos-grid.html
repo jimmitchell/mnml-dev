@@ -9,8 +9,14 @@
 	{{- if .Params.photos -}}
 	<li>
 		<a href="{{ .Permalink }}">
-			{{ range first 1 .Params.photos }}
-				<img src="{{ . }}" loading="lazy" />
+			{{ if .Site.Params.all_photos }}
+				{{ range .Params.photos }}
+					<img src="{{ . }}" loading="lazy" />
+				{{ end }}
+			{{ else }}
+				{{ range first 1 .Params.photos }}
+					<img src="{{ . }}" loading="lazy" />
+				{{ end }}
 			{{ end }}
 		</a>
 	</li>

@@ -1,5 +1,5 @@
 {
-	"version": "2.4.3",
+	"version": "2.4.4",
 	"title": "mnml",
 	"description": "A minimal, simple and clean Micro.blog theme.",
 	"fields": [
@@ -49,6 +49,11 @@
 		  "type": "boolean"
 		},
 		{
+		  "field": "params.category_full_post",
+		  "label": "Show full posts on category pages",
+		  "type": "boolean"
+		},
+		{
 		  "field": "params.masonry_layout",
 		  "label": "Use photos masonry layout",
 		  "type": "boolean"
@@ -56,6 +61,11 @@
 		{
 		  "field": "params.full_width_photos",
 		  "label": "Show a wider photos page",
+		  "type": "boolean"
+		},
+		{
+		  "field": "params.all_photos",
+		  "label": "Show all photos from post, (not just the first one)",
 		  "type": "boolean"
 		},
 		{
