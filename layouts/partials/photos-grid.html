@@ -7,13 +7,14 @@
 {{- $len := (len $list) -}}
 {{ range $index, $value := $list }}
 	{{- if .Params.photos -}}
-	<li>
-		<a href="{{ .Permalink }}">
-		{{ range first 1 .Params.photos }}
-			<img src="{{ . }}" loading="lazy" />
+		{{- $postPermalink := .Permalink }} <!-- Store the current post's permalink -->
+		{{ range .Params.photos }}
+			<li>
+				<a href="{{ $postPermalink }}"> <!-- Use the stored permalink -->
+					<img src="{{ . }}" loading="lazy" />
+				</a>
+			</li>
 		{{ end }}
-		</a>
-	</li>
 	{{- end -}}
 {{- end -}}
 </ul>
