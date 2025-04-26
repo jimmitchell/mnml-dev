@@ -60,7 +60,7 @@
 		},
 		{
 		  "field": "params.all_images",
-		  "label": "Show all image types on Photo layout (png, webp, heic, etc.)",
+		  "label": "Show all image types on Photo layout.",
 		  "type": "boolean"
 		},
 		{
