@@ -1,22 +1,31 @@
 <ul class="masonry-grid">
-{{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
+{{- $list := slice -}}
+{{- if .Site.Params.all_images -}}
+	{{- $list = where .Site.Pages ".Params.images" "!=" nil -}}
+{{- else -}}
+	{{- $list = where .Site.Pages ".Params.photos" "!=" nil -}}
+{{- end -}}
 {{- $category := index .Site.Taxonomies.categories (lower .Site.Params.photos_category) -}}
 {{- if $category }}
 	{{- $list = $category.Pages -}}
-{{ end }}
-{{- $len := (len $list) -}}
-{{ range $index, $value := $list }}
-	{{- if .Params.photos -}}
-		{{- $postPermalink := .Permalink }}
-		{{ range .Params.photos }}
-			<li>
-				<a href="{{ $postPermalink }}">
-					<img src="{{ . }}" loading="lazy" />
-				</a>
-			</li>
-		{{ end }}
-	{{- end -}}
-{{- end -}}
+{{- end }}
+{{- $len := len $list -}}
+{{- if gt $len 0 }}  <!-- Check if the list has items -->
+	{{ range $index, $value := $list }}
+		{{- if .Params.photos -}}
+			{{- $postPermalink := .Permalink }}
+			{{ range .Params.photos }}
+				<li>
+					<a href="{{ $postPermalink }}">
+						<img src="{{ . }}" loading="lazy" />
+					</a>
+				</li>
+			{{ end }}
+		{{- end -}}
+	{{ end }}
+{{- else }}
+	<li>No images available.</li>  <!-- Optional: Message if no images -->
+{{- end }}
 </ul>
 <script>
 	function debounce(func, wait) {

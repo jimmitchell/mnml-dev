@@ -1,5 +1,5 @@
 {
-	"version": "2.4.4",
+	"version": "2.4.5",
 	"title": "mnml",
 	"description": "A minimal, simple and clean Micro.blog theme.",
 	"fields": [
@@ -10,15 +10,15 @@
 			"placeholder": "Preferred language code (e.g. de, fr, es)."
 		},
 		{
-		  "field": "params.fediverse_creator",
-		  "label": "Fediverse creator",
-		  "type": "string",
-		  "placeholder": "@username@mastodon.instance"
+			"field": "params.fediverse_creator",
+			"label": "Fediverse creator",
+			"type": "string",
+			"placeholder": "@username@mastodon.instance"
 		},
 		{
-		  "field": "params.narrow_header",
-		  "label": "Use a narrow site header",
-		  "type": "boolean"
+			"field": "params.narrow_header",
+			"label": "Use a narrow site header",
+			"type": "boolean"
 		},
 		{
 			"field": "params.hide_avatar",
@@ -26,42 +26,47 @@
 			"type": "boolean"
 		},
 		{
-		  "field": "params.custom_avatar",
-		  "label": "Custom header icon",
-		  "type": "string",
-		  "placeholder": "Enter a full URL to an image."
+			"field": "params.custom_avatar",
+			"label": "Custom header icon",
+			"type": "string",
+			"placeholder": "Enter a full URL to an image."
 		},
 		{
-		  "field": "params.home_category",
-		  "label": "Home page categories",
-		  "type": "string",
-		  "placeholder": "Home page categories. Leave blank for all posts."
+			"field": "params.home_category",
+			"label": "Home page categories",
+			"type": "string",
+			"placeholder": "Home page categories. Leave blank for all posts."
 		},
 		{
-		  "field": "params.photos_category",
-		  "label": "Photos category",
-		  "type": "string",
-		  "placeholder": "Set a single photo category. Leave blank for all images."
+			"field": "params.photos_category",
+			"label": "Photos category",
+			"type": "string",
+			"placeholder": "Set a single photo category. Leave blank for all images."
 		},
 		{
-		  "field": "params.show_full_post",
-		  "label": "Show full posts on homepage",
-		  "type": "boolean"
+			"field": "params.show_full_post",
+			"label": "Show full posts on homepage",
+			"type": "boolean"
 		},
 		{
-		  "field": "params.category_full_post",
-		  "label": "Show full posts on category pages",
-		  "type": "boolean"
+			"field": "params.category_full_post",
+			"label": "Show full posts on category pages",
+			"type": "boolean"
 		},
 		{
-		  "field": "params.masonry_layout",
-		  "label": "Use photos masonry layout",
-		  "type": "boolean"
+			"field": "params.masonry_layout",
+			"label": "Use photos masonry layout",
+			"type": "boolean"
 		},
 		{
-		  "field": "params.full_width_photos",
-		  "label": "Show a wider photos page",
-		  "type": "boolean"
+			"field": "params.all_images",
+			"label": "Show all images on Photo layout (including .png, etc)",
+			"type": "boolean"
+		},
+		{
+			"field": "params.full_width_photos",
+			"label": "Show a wider photos page",
+			"type": "boolean"
 		},
 		{
 			"field": "params.use_short_date",
@@ -69,14 +74,14 @@
 			"type": "boolean"
 		},
 		{
-		  "field": "params.show_categories",
-		  "label": "Show categories on archives page",
-		  "type": "boolean"
+			"field": "params.show_categories",
+			"label": "Show categories on archives page",
+			"type": "boolean"
 		},
 		{
-		  "field": "params.hide_credit",
-		  "label": "Hide footer credits",
-		  "type": "boolean"
+			"field": "params.hide_credit",
+			"label": "Hide footer credits",
+			"type": "boolean"
 		}
 	]
 }
