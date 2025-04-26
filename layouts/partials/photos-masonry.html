@@ -9,7 +9,7 @@
 	{{- if .Params.photos -}}
 		{{ range .Params.photos }}
 			<li>
-				<a href="{{ $list.Permalink }}"> <!-- Use $.Permalink to reference the post permalink -->
+				<a href="{{ .Page.Permalink }}"> <!-- Use $.Permalink to reference the post permalink -->
 					<img src="{{ . }}" loading="lazy" />
 				</a>
 			</li>
