@@ -64,11 +64,6 @@
 		  "type": "boolean"
 		},
 		{
-		  "field": "params.all_photos",
-		  "label": "Show all photos from post, (not just the first one)",
-		  "type": "boolean"
-		},
-		{
 			"field": "params.use_short_date",
 			"label": "Use a short date format",
 			"type": "boolean"
