@@ -3,7 +3,7 @@
 {{- $list := where .Site.Pages ".Params.images" "!=" nil -}}
 {{- else -}}
 {{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
-{{- end --}}
+{{- end -}}
 {{- $category := index .Site.Taxonomies.categories (lower .Site.Params.photos_category) -}}
 {{- if $category }}
 	{{- $list = $category.Pages -}}
