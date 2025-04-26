@@ -1,4 +1,5 @@
 <ul class="masonry-grid">
+{{- $list := slice -}}
 {{- if .Site.Params.all_images -}}
 {{- $list := where .Site.Pages ".Params.images" "!=" nil -}}
 {{- else -}}
