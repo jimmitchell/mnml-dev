@@ -7,8 +7,8 @@
   --accent-2: #d4d4d6;
   --accent-3: #84868b;
   --highlight: #e3e3e6;
-  --sans-serif-font: 'GTW', -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --mono-space-font: SFMono-Regular, ui-monospace, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --sans-serif-font: "GTW", -apple-system, system-ui, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono-space-font: SFMono-Regular, ui-monospace, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
   --header-width: 94rem;
@@ -219,7 +219,7 @@ tt {
 
 pre {
   background: #101115;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   color: #f8f8f8;
   line-height: 1.5;
   margin: 2rem 0;
@@ -258,8 +258,8 @@ mark {
   margin-left: -3px;
 }
 
-input[type=button],
-input[type=submit] {
+input[type="button"],
+input[type="submit"] {
   background-color: var(--accent-2);
   border-radius: var(--border-radius);
   border: none;
@@ -270,21 +270,21 @@ input[type=submit] {
   text-decoration: none;
 }
 
-input[type=button]:hover,
-input[type=button]:active,
-input[type=submit]:hover,
-input[type=submit]:active {
+input[type="button"]:hover,
+input[type="button"]:active,
+input[type="submit"]:hover,
+input[type="submit"]:active {
   background: var(--link);
   color: #fff;
 }
 
-input[type=date],
-input[type=email],
-input[type=number],
-input[type=search],
-input[type=tel],
-input[type=text],
-input[type=url],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
 textarea {
   background: var(--accent-1);
   border-radius: var(--border-radius);
@@ -297,12 +297,12 @@ textarea {
   width: 100%;
 }
 
-input[type=email]:active,
-input[type=email]:focus,
-input[type=text]:active,
-input[type=text]:focus,
-input[type=search]:active,
-input[type=search]:focus,
+input[type="email"]:active,
+input[type="email"]:focus,
+input[type="text"]:active,
+input[type="text"]:focus,
+input[type="search"]:active,
+input[type="search"]:focus,
 textarea:active,
 textarea:focus {
   border-color: var(--accent-3);
@@ -360,7 +360,7 @@ main {
   justify-content: space-between;
   margin: 0 auto;
   max-width: var(--header-width);
-  padding: .75rem 2rem .5rem 2rem;
+  padding: 0.75rem 2rem 0.5rem 2rem;
 }
 
 .site-nav ul {
@@ -499,7 +499,7 @@ a.category:active {
   border: 1px solid var(--accent-1);
   color: var(--accent-3);
   display: inline-block;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.6;
   margin: 0 1px 5px 0;
   padding: 2px 10px;
@@ -602,7 +602,7 @@ a.category:active {
 
 .microblog_reply_signin {
   font-size: 1.7rem;
-  margin-top: .75rem;
+  margin-top: 0.75rem;
 }
 
 .microblog_reply_textarea textarea {
@@ -633,8 +633,8 @@ a.category:active {
 
 .microblog_reply_button {
   font-size: 1.7rem;
-  margin-bottom: .75rem;
-  margin-top: -.75rem;
+  margin-bottom: 0.75rem;
+  margin-top: -0.75rem;
   text-align: right;
 }
 
@@ -655,7 +655,7 @@ input.subscribe-submit {
   text-align: center;
 }
 
-main.archive .entry p>img {
+main.archive .entry p > img {
   display: none;
 }
 
@@ -826,29 +826,29 @@ a.tinylytics_webring {
 }
 
 .microblog_collection {
-    align-items: center;
-    justify-content: center;
-    line-height: 0;
-    margin: 0px -3px !important;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  margin: 0px -3px !important;
 }
 
 .microblog_collection img {
-    border-radius: 1rem !important;
-    border: 3px solid transparent;
-    cursor: pointer;
-    display: inline !important;
-    height: 150px !important;
-    margin: 0 !important;
-    object-fit: cover;
-    padding: 0;
-    width: 25% !important;
+  border-radius: 1rem !important;
+  border: 3px solid transparent;
+  cursor: pointer;
+  display: inline !important;
+  height: 150px !important;
+  margin: 0 !important;
+  object-fit: cover;
+  padding: 0;
+  width: 25% !important;
 }
 
 .microblog_collection img:hover {
-    -moz-filter: brightness(70%);
-    -webkit-filter: brightness(70%);
-    filter: brightness(70%);
-    transition: ease-in-out 0.25s;
+  -moz-filter: brightness(70%);
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+  transition: ease-in-out 0.25s;
 }
 
 .microblog_lightbox_nav {
