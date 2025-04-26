@@ -1,5 +1,5 @@
 {
-	"version": "2.4.5",
+	"version": "2.4.4",
 	"title": "mnml",
 	"description": "A minimal, simple and clean Micro.blog theme.",
 	"fields": [
@@ -56,11 +56,6 @@
 		{
 		  "field": "params.masonry_layout",
 		  "label": "Use photos masonry layout",
-		  "type": "boolean"
-		},
-		{
-		  "field": "params.all_images",
-		  "label": "Show all image types on Photo layout",
 		  "type": "boolean"
 		},
 		{
