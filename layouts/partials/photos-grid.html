@@ -1,6 +1,6 @@
 <ul class="grid">
 {{- $list := slice -}}
-{{- if .Site.Params.show_all_images -}}
+{{- if .Site.Params.all_img_types -}}
 	{{- $list = where .Site.Pages ".Params.images" "!=" nil -}}
 {{- else -}}
 	{{- $list = where .Site.Pages ".Params.photos" "!=" nil -}}
