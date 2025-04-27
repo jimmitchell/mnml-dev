@@ -59,7 +59,7 @@
 			"type": "boolean"
 		},
 		{
-			"field": "params.all_images",
+			"field": "params.show_all_images",
 			"label": "Show all images on Photo layout (including .png, etc)",
 			"type": "boolean"
 		},

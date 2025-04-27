@@ -1,6 +1,6 @@
 <ul class="masonry-grid">
 {{- $list := slice -}}
-{{- if .Site.Params.all_images -}}
+{{- if .Site.Params.show_all_images -}}
 	{{- $list = where .Site.Pages ".Params.images" "!=" nil -}}
 {{- else -}}
 	{{- $list = where .Site.Pages ".Params.photos" "!=" nil -}}
@@ -10,14 +10,14 @@
 	{{- $list = $category.Pages -}}
 {{- end }}
 {{- $len := len $list -}}
-{{- if gt $len 0 }}  <!-- Check if the list has items -->
+{{- if gt $len 0 }}
 	{{ range $index, $value := $list }}
 		{{- if .Params.photos -}}
 			{{- $postPermalink := .Permalink }}
 			{{ range .Params.photos }}
 				<li>
 					<a href="{{ $postPermalink }}">
-						<img src="{{ . }}" loading="lazy" />
+						<img src="{{ . }}" loading="lazy" /><!--???-->
 					</a>
 				</li>
 			{{ end }}
