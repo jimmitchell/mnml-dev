@@ -1,14 +1,17 @@
 <ul class="masonry-grid">
+{{- $category := index .Site.Taxonomies.categories (lower .Site.Params.photos_category) -}}
 {{- $list := slice -}}
-{{- if .Site.Params.all_img_types -}}
+
+{{- if and (.Site.Params.all_img_types) ($category) -}}
+	{{- $list = $category.Pages ".Params.images" "!=" nil -}}
+{{- else if .Site.Params.all_img_types -}}
 	{{- $list = where .Site.Pages ".Params.images" "!=" nil -}}
+{{- else if $category -}}
+	{{- $list = $category.Pages -}}
 {{- else -}}
 	{{- $list = where .Site.Pages ".Params.photos" "!=" nil -}}
 {{- end -}}
-{{- $category := index .Site.Taxonomies.categories (lower .Site.Params.photos_category) -}}
-{{- if $category }}
-	{{- $list = $category.Pages -}}
-{{- end }}
+
 {{- $len := len $list -}}
 {{- if gt $len 0 }}
 	{{ range $index, $value := $list }}
