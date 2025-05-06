@@ -1,0 +1,16 @@
+{
+  "documents": [
+	{{- $pages := where .Site.Pages "Kind" "in" (slice "page" "section" "taxonomy" "term") -}}
+	{{- range $index, $page := $pages }}
+	{{- if and (not $page.IsHome) (gt (len $page.Content) 0) }}
+	  {{- if $index }},{{ end }}{
+		"id": {{ $index }},
+		"title": {{ $page.Title | jsonify }},
+		"content": {{ $page.Plain | jsonify }},
+		"section": {{ $page.Section | jsonify }},
+		"url": {{ $page.Permalink | jsonify }}
+	  }
+	{{- end }}
+	{{- end }}
+  ]
+}
