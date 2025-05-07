@@ -1,0 +1,57 @@
+<div class="search-page">
+	<div id="search-container">
+		<input type="search" id="search-input" placeholder="Search the site..." autofocus>
+		<div id="search-results"></div>
+	</div>
+	<script src="https://unpkg.com/lunr/lunr.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		fetch('/index.json')
+			.then(response => response.json())
+			.then(data => {
+				const idx = lunr(function() {
+					this.ref('id');
+					this.field('title', { boost: 10 });
+					this.field('content');
+					
+					data.documents.forEach((doc, index) => {
+					this.add({
+						id: index,
+						title: doc.title,
+						content: doc.content
+					});
+				});
+			});
+			const searchInput = document.getElementById('search-input');
+			const searchResults = document.getElementById('search-results');
+			searchInput.addEventListener('input', function() {
+				const query = this.value;
+				if (query.length < 2) {
+					searchResults.innerHTML = '';
+					return;
+				}
+				const results = idx.search(query + '*');
+				if (results.length === 0) {
+					searchResults.innerHTML = '<p>No results found</p>';
+					return;
+				}
+				searchResults.innerHTML = `
+					<div class="search-results">
+						<h3>Results</h3>
+						<ul class="search-list">
+							${results.map(result => {
+								const doc = data.documents[result.ref];
+								return `
+									<li class="search-result">
+										<h4><a href="${doc.url}">${doc.title}</a></h4>
+										<p style="margin-top:1rem;line-height:var(--base-line-height)">${doc.content.substring(0, 300)}...</p>
+									</li>
+								`;
+							}).join('')}
+						</ul>
+					</div>`;
+				});
+			});
+		});
+	</script>
+</div>
