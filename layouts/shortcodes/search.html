@@ -1,13 +1,14 @@
 {{- $searchValue := index .Site.Params "search_results" }}
 {{- if and (ne $searchValue "") (ne $searchValue nil) }}
-    {{- $searchValue }}
+    {{- $searchValue := $searchValue }}
 {{- else }}
-    {{- $searchValue := "5" }}
+    {{- $searchValue := "5" }}  <!-- Default value -->
 {{- end }}
 
 <script language="javascript">
     var archive_results = {};
-    
+    var maxResults = {{ $searchValue | default "5" }};  // Use Hugo's default function to ensure a valid number
+
     function runSearch(q) {
         var results_node = document.getElementById("list_results");
         results_node.innerHTML = "";
@@ -56,7 +57,7 @@
 
                     resultCount++;
 
-                    if (resultCount >= ({{ $searchValue }})) {
+                    if (resultCount >= maxResults) {  // Use maxResults variable
                         break;
                     }
                 }
