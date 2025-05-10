@@ -1,16 +1,21 @@
 {
-  "documents": [
-	{{- $pages := where .Site.Pages "Kind" "in" (slice "page" "section" "taxonomy" "term") -}}
-	{{- range $index, $page := $pages }}
-	{{- if and (not $page.IsHome) (gt (len $page.Content) 0) }}
-	  {{- if $index }},{{ end }}{
-		"id": {{ $index }},
-		"title": {{ $page.Title | jsonify }},
-		"content": {{ $page.Plain | jsonify }},
-		"section": {{ $page.Section | jsonify }},
-		"url": {{ $page.Permalink | jsonify }}
-	  }
-	{{- end }}
-	{{- end }}
-  ]
+	"version": "https://jsonfeed.org/version/1",
+	"title": {{ .Site.Title | jsonify }},
+	"icon": "{{ .Site.Author.avatar }}",
+	"home_page_url": "{{ .Site.BaseURL }}",
+	"feed_url": "{{ .Site.BaseURL }}photos/index.json",
+	"items": [
+		{{- $list := (where .Site.Pages "Type" "post") -}}
+		{{- $len := (len $list) -}}
+		{{ range $index, $value := $list }}
+			{
+				"id": "{{ .Permalink }}",
+				"title": {{ .Title | jsonify }},
+				"content_text": {{ .Plain | jsonify }},
+				"date_published": "{{- if .Site.Params.use_short_date }}{{ .Date | time.Format ":date_short" }}{{- else }}{{ .Date | time.Format ":date_full" }}{{- end }}",
+				"url": "{{ .Permalink }}"
+			}
+			{{- if ne (add $index 1) $len -}},{{- end -}}
+		{{ end }}
+	]
 }

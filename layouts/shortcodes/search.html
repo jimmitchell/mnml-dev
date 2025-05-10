@@ -1,57 +1,103 @@
-<div class="search-page">
-	<div id="search-container">
-		<input type="search" id="search-input" placeholder="Search the site..." autofocus>
-		<div id="search-results"></div>
-	</div>
-	<script src="https://unpkg.com/lunr/lunr.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-		fetch('/archive/index.json')
-			.then(response => response.json())
-			.then(data => {
-				const idx = lunr(function() {
-					this.ref('id');
-					this.field('title', { boost: 10 });
-					this.field('content');
-					
-					data.documents.forEach((doc, index) => {
-					this.add({
-						id: index,
-						title: doc.title,
-						content: doc.content
-					});
-				});
-			});
-			const searchInput = document.getElementById('search-input');
-			const searchResults = document.getElementById('search-results');
-			searchInput.addEventListener('input', function() {
-				const query = this.value;
-				if (query.length < 2) {
-					searchResults.innerHTML = '';
-					return;
-				}
-				const results = idx.search(query + '*');
-				if (results.length === 0) {
-					searchResults.innerHTML = '<p>No results found</p>';
-					return;
-				}
-				searchResults.innerHTML = `
-					<div class="search-results">
-						<h3>Results</h3>
-						<ul class="search-list">
-							${results.map(result => {
-								const doc = data.documents[result.ref];
-								return `
-									<li class="search-result">
-										<h4><a href="${doc.url}">${doc.title}</a></h4>
-										<p style="margin-top:1rem;line-height:var(--base-line-height)">${doc.content.substring(0, 300)}...</p>
-									</li>
-								`;
-							}).join('')}
-						</ul>
-					</div>`;
-				});
-			});
-		});
-	</script>
-</div>
+<script language="javascript">
+
+    var archive_results = {};
+    
+            function runSearch(q) {
+                var results_node = document.getElementById("list_results");
+                results_node.innerHTML = "";
+    
+                if (q.length > 0) {
+                    var resultsFound = false; // Flag to check if any results are found
+                    var resultCount = 0; // Counter for number of results found
+    
+                    for (var i = 0; i < archive_results.items.length; i++) {
+                        var item = archive_results.items[i];
+                        var title_lower = item.title.toLowerCase();
+                        var text_lower = item.content_text.toLowerCase();
+    
+                        if (title_lower.includes(q) || text_lower.includes(q)) {
+                            var p_node = document.createElement("p");
+                            var link_node = document.createElement("a");
+                            var d = Date.parse(item.date_published);
+                            var date_s = new Date(d).toISOString().substr(0, 10);
+                            var date_node = document.createTextNode(date_s);
+                            link_node.appendChild(date_node);
+                            link_node.href = item.url;
+                            var title_node = null;
+    
+                            if (item.title.length > 0) {
+                                title_node = document.createElement("span");
+                                title_node.innerHTML = ": <b>" + item.title + "</b>";
+                            }
+    
+                            var s = item.content_text;
+    
+                            if (s.length > 250) {
+                                s = s.substr(0, 250) + "...";
+                            }
+    
+                            var text_node = document.createElement("span");
+                            text_node.innerHTML = ": " + s;
+    
+                            p_node.appendChild(link_node);
+    
+                            if (title_node != null) {
+                                p_node.appendChild(title_node);
+                            }
+    
+                            p_node.appendChild(text_node);
+                            results_node.appendChild(p_node);
+    
+                            resultCount++;
+
+                            resultsFound = true;
+    
+                            if (resultCount >= {{- $.Site.Params.results_count }}) {
+                                break;
+                            }
+                        }
+                    }
+    
+                    if (resultsFound) {
+                        results_node.style.display = "block";
+                    } else {
+                        results_node.style.display = "none";
+                    }
+                } else {
+                    results_node.style.display = "none"; // Hide results if search query is empty
+                }
+            }
+    
+            function submitSearch(q) {
+                runSearch(q);
+    
+                const url = new URL(window.location.href);
+                url.searchParams.set("q", q);
+                history.pushState({}, "", url);
+            }
+    
+            document.addEventListener("DOMContentLoaded", function() {
+                fetch("/archive/index.json")
+                    .then(response => response.json())
+                    .then(data => {
+                        archive_results = data;
+    
+                        const url = window.location.href;
+                        const params = new URLSearchParams(new URL(url).search);
+                        const q = params.get("q");
+    
+                        if (q && q.length > 0) {
+                            document.getElementById("input_search").value = q;
+                            runSearch(q);
+                        }
+                    });
+            });
+
+    </script>
+    
+    <form onSubmit="return false;">
+        <input class="field" type="text" name="q" id="input_search" placeholder="Search" onChange="submitSearch(this.value.toLowerCase());" />
+    </form>
+    
+    <div id="list_results"></div>
+    

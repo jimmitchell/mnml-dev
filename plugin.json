@@ -1,5 +1,5 @@
 {
-	"version": "2.4.6",
+	"version": "2.5.0",
 	"title": "mnml",
 	"description": "A minimal, simple and clean Micro.blog theme.",
 	"fields": [
@@ -72,6 +72,11 @@
 		  "field": "params.show_categories",
 		  "label": "Show categories on archives page",
 		  "type": "boolean"
+		},
+		{
+			"field": "params.search_results",
+			"label": "Number of search results returned",
+			"type": "number"
 		},
 		{
 		  "field": "params.hide_credit",
