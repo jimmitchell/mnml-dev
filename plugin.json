@@ -76,7 +76,7 @@
 		{
 			"field": "params.search_results",
 			"label": "Number of search results",
-			"type": "number"
+			"type": "string"
 		},
 		{
 		  "field": "params.hide_credit",

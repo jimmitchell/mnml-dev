@@ -52,7 +52,7 @@
 
                             resultsFound = true;
     
-                            if (resultCount >= {{- if eq .Site.Params.search_results "" }}5{{- else }}{{ .Site.Params.search_results }}{{- end }}) {
+                            if (resultCount >= ({{ if or (eq .Site.Params.search_results "") (not (index .Site.Params "search_results")) }}5{{- else }}{{ .Site.Params.search_results }}{{- end }}) {
                                 break;
                             }
                         }
