@@ -52,7 +52,7 @@
 
                             resultsFound = true;
     
-                            if (resultCount >= {{- $.Site.Params.search_results }}) {
+                            if (resultCount >= {{- if isset .Site.Params.search_results }}{{- .Site.Params.search_results }}{{- else}}5{{- end }}) {
                                 break;
                             }
                         }
