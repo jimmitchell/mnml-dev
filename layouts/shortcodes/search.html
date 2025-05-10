@@ -1,3 +1,9 @@
+{{- $searchValue := index .Site.Params "search_results" }}
+{{- if and (ne $searchValue "") (ne $searchValue nil) }}
+    {{ $searchValue }}
+{{- else }}
+    {{ $searchValue := "5" }}
+{{- end }} 
 <script language="javascript">
 
     var archive_results = {};
@@ -52,15 +58,7 @@
 
                             resultsFound = true;
     
-                            if (resultCount >= (
-                                {{- $searchValue := index .Site.Params "search_results" }}
-                                {{- if and (ne $searchValue "") (ne $searchValue nil) }}
-                                  {{ $searchValue }}
-                                {{- else }}
-                                  {{ $default := "5" }}
-                                  {{ $default }}
-                                {{- end }}   
-                            ) {
+                            if (resultCount >= ($searchValue) {
                                 break;
                             }
                         }
