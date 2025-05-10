@@ -1,8 +1,8 @@
-{{- $searchValue := index .Site.Params "search_results" }}
-{{- if and ($searchValue) (ne $searchValue "") }}
-    {{ $searchValue }}
+{{- $searchValue := .Site.Params "search_results" }}
+{{- if (ne $searchValue "") }}
+    {{- $searchValue }}
 {{- else }}
-    {{ $searchValue := "5" }}
+    {{- $searchValue := "5" }}
 {{- end }} 
 <script language="javascript">
 
