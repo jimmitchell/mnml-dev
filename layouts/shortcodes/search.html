@@ -1,4 +1,4 @@
-{{- $searchValue := .Site.Params "search_results" }}
+{{- $searchValue := $.Site.Params "search_results" }}
 {{- if (ne $searchValue "") }}
     {{- $searchValue }}
 {{- else }}
