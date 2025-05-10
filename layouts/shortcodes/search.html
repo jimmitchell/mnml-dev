@@ -7,8 +7,8 @@
                 results_node.innerHTML = "";
     
                 if (q.length > 0) {
-                    var resultsFound = false; // Flag to check if any results are found
-                    var resultCount = 0; // Counter for number of results found
+                    var resultsFound = false;
+                    var resultCount = 0;
     
                     for (var i = 0; i < archive_results.items.length; i++) {
                         var item = archive_results.items[i];
@@ -52,7 +52,7 @@
 
                             resultsFound = true;
     
-                            if (resultCount >= {{- $.Site.Params.results_count }}) {
+                            if (resultCount >= {{- $.Site.Params.search_results }}) {
                                 break;
                             }
                         }
