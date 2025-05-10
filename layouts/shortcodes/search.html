@@ -1,5 +1,5 @@
 {{- $searchValue := index .Site.Params "search_results" }}
-{{- if and (ne $searchValue "") (ne $searchValue nil) }}
+{{- if and (ne $searchValue "") (isset $searchValue) }}
     {{ $searchValue }}
 {{- else }}
     {{ $searchValue := "5" }}
