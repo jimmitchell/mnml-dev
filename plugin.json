@@ -75,7 +75,7 @@
 		},
 		{
 			"field": "params.search_results",
-			"label": "Number of search results returned",
+			"label": "Number of search results",
 			"type": "number"
 		},
 		{
