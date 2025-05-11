@@ -40,7 +40,7 @@ Note: Search results default to 5 until you set your own value in the **mnml** p
 Thank you to the following for their **mnml** localization contributions:
 
 - Swedish: [@robertbirming](https://github.com/robertbirming)
-- Ukrainian & Russian: [@Lluxury-format](https://github.com/luxury-format)
+- Ukrainian & Russian: [@luxury-format](https://github.com/luxury-format)
 
 ### Support
 
