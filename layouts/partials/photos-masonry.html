@@ -19,10 +19,10 @@
 {{ range $index, $value := $list }}
 	{{- if $allFormats }}
 		{{- $postPermalink := .Permalink }}
-		{{ range .Params.images }}
+		{{ range .Params.photos }}
 	{{- else }}
 		{- $postPermalink := .Permalink }}
-		{{ range .Params.photos }}
+		{{ range .Params.images }}
 			<li>
 				<a href="{{ $postPermalink }}">
 					<img src="{{ . }}" loading="lazy" />
