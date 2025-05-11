@@ -21,6 +21,11 @@
 		  "type": "boolean"
 		},
 		{
+			"field": "params.use_short_date",
+			"label": "Use a short date format",
+			"type": "boolean"
+		},
+		{
 			"field": "params.hide_avatar",
 			"label": "Hide header avatar",
 			"type": "boolean"
@@ -38,12 +43,6 @@
 		  "placeholder": "Home page categories. Leave blank for all posts."
 		},
 		{
-		  "field": "params.photos_category",
-		  "label": "Photos category",
-		  "type": "string",
-		  "placeholder": "Set a single photo category. Leave blank for all images."
-		},
-		{
 		  "field": "params.show_full_post",
 		  "label": "Show full posts on homepage",
 		  "type": "boolean"
@@ -54,8 +53,14 @@
 		  "type": "boolean"
 		},
 		{
+		  "field": "params.photos_category",
+		  "label": "Photos category",
+		  "type": "string",
+		  "placeholder": "Set a single photo category. Leave blank for all images."
+		},
+		{
 		  "field": "params.all_formats",
-		  "label": "Display all image formats",
+		  "label": "Display all image formats (jpg, png, etc,)",
 		  "type": "boolean"
 		},
 		{
@@ -65,13 +70,8 @@
 		},
 		{
 		  "field": "params.full_width_photos",
-		  "label": "Show a wider photos page",
+		  "label": "Use a wider photos page",
 		  "type": "boolean"
-		},
-		{
-			"field": "params.use_short_date",
-			"label": "Use a short date format",
-			"type": "boolean"
 		},
 		{
 		  "field": "params.show_categories",
@@ -80,7 +80,7 @@
 		},
 		{
 			"field": "params.search_results",
-			"label": "Number of search results",
+			"label": "Number of search results to display",
 			"placeholder": "Defaults to 5 if left blank",
 			"type": "string"
 		},
