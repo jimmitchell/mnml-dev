@@ -76,6 +76,7 @@
 		{
 			"field": "params.search_results",
 			"label": "Number of search results",
+			"placeholder": "Defaults to 5 if left blank",
 			"type": "string"
 		},
 		{
