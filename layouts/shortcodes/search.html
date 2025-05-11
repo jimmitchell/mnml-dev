@@ -53,21 +53,19 @@ function runSearch(q) {
 
                 resultsFound = true;
 
-                // Check if we've reached the max results limit
                 if (resultCount >= maxResults) {
-                    break; // Exit the loop if we've hit the max results
+                    break;
                 }
             }
         }
 
-        // Show the results_node only if results are found
         if (resultsFound) {
             results_node.style.display = "block";
         } else {
             results_node.style.display = "none";
         }
     } else {
-        results_node.style.display = "none"; // Hide results if search query is empty
+        results_node.style.display = "none";
     }
 }
 
@@ -99,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <form onSubmit="return false;">
-    <input class="field" type="text" name="q" id="input_search" placeholder="Search" onChange="submitSearch(this.value.toLowerCase());" />
+    <input class="field" type="text" name="q" id="input_search" placeholder="{{ T "Type and hit return" }}" onChange="submitSearch(this.value.toLowerCase());" />
 </form>
 
 <div id="list_results"></div>
