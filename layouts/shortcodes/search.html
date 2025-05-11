@@ -52,7 +52,7 @@ var archive_results = {};
 
                         resultsFound = true;
 
-                        if (resultCount >= {{- $.Site.Params.results_count | default 5 }}) {
+                        if (resultCount >= {{- $.Site.Params.search_results | default 5 }}) {
                             break;
                         }
                     }
