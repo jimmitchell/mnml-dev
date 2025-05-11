@@ -17,8 +17,11 @@
 
 {{- $len := (len $list) }}
 {{ range $index, $value := $list }}
-	{{- if .Params.photos }}
+	{{- if $allFormats }}
 		{{- $postPermalink := .Permalink }}
+		{{ range .Params.images }}
+	{{- else }}
+		{- $postPermalink := .Permalink }}
 		{{ range .Params.photos }}
 			<li>
 				<a href="{{ $postPermalink }}">
