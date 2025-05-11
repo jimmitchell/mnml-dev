@@ -7,8 +7,8 @@ var archive_results = {};
             results_node.innerHTML = "";
 
             if (q.length > 0) {
-                var resultsFound = false; // Flag to check if any results are found
-                var resultCount = 0; // Counter for number of results found
+                var resultsFound = false;
+                var resultCount = 0;
 
                 for (var i = 0; i < archive_results.items.length; i++) {
                     var item = archive_results.items[i];
@@ -19,7 +19,7 @@ var archive_results = {};
                         var p_node = document.createElement("p");
                         var link_node = document.createElement("a");
                         var d = Date.parse(item.date_published);
-                        var date_s = new Date(d).toISOString().substr(0, 10);
+                        var date_s = new Date(d).toLocaleDateString().substr(0, 10);
                         var date_node = document.createTextNode(date_s);
                         link_node.appendChild(date_node);
                         link_node.href = item.url;
@@ -48,13 +48,10 @@ var archive_results = {};
                         p_node.appendChild(text_node);
                         results_node.appendChild(p_node);
 
-                        // Increment the resultCount
                         resultCount++;
 
-                        // Set the flag to true since results are found
                         resultsFound = true;
 
-                        // Break out of the loop when max results have been found
                         if (resultCount >= {{- $.Site.Params.results_count | default 5 }}) {
                             break;
                         }
@@ -99,37 +96,6 @@ var archive_results = {};
 
     
 </script>
-
-<style>
-
-#search {
-    display: none;
-}
-
-#list_results {
-    display: none;
-}
-
-
-.field {
-    width: 100%;
-    height: 34px;
-    border: 2px solid #eee;
-    padding-left: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 11px;
-}
-
-#list_results {
-    z-index: 10 !important;
-    padding: 2rem;
-    border-radius: 11px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-
-}
-
-</style>
 
 <form onSubmit="return false;">
     <input class="field" type="text" name="q" id="input_search" placeholder="Search" onChange="submitSearch(this.value.toLowerCase());" />
