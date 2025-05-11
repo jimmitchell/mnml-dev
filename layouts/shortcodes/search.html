@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <form onSubmit="return false;">
-    <input class="field" type="text" name="q" id="input_search" placeholder="{{ T "Type and hit return" }}" onChange="submitSearch(this.value.toLowerCase());" />
+    <input class="field" type="text" name="q" id="input_search" placeholder="{{ T "Type and hit return" }}" onChange="submitSearch(this.value.toLowerCase());" autofocus />
 </form>
 
 <div id="list_results"></div>
