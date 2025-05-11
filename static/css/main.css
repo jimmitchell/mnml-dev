@@ -742,6 +742,10 @@ footer p {
   margin-top: 3rem;
 }
 
+#to-top {
+  display: none;
+}
+
 .to-top {
   background: var(--link);
   border-radius: var(--border-radius);
