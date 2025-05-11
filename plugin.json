@@ -54,6 +54,11 @@
 		  "type": "boolean"
 		},
 		{
+		  "field": "params.all_formats",
+		  "label": "Display all image formats (.jpg, .png, etc)",
+		  "type": "boolean"
+		},
+		{
 		  "field": "params.masonry_layout",
 		  "label": "Use photos masonry layout",
 		  "type": "boolean"
