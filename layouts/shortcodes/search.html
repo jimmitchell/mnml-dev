@@ -1,11 +1,13 @@
 {{- $searchValue := index .Site.Params "search_results" }}
 {{- if and (ne $searchValue "") (ne $searchValue nil) }}
-    {{- $searchValue := $searchValue }}
+    {{- $searchValue := $searchValue | atoi }}  <!-- Convert to integer if it exists and is not empty -->
+{{- else }}
+    {{- $searchValue := 5 }}  <!-- Default value as a number -->
 {{- end }}
 
 <script language="javascript">
     var archive_results = {};
-    var maxResults = {{ (add $searchValue 0) | default 5 }};  // Convert to number and set default
+    var maxResults = {{ $searchValue | default 5 }};  // Ensure maxResults is a number
 
     function runSearch(q) {
         var results_node = document.getElementById("list_results");
