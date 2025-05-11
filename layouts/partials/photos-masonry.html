@@ -17,7 +17,7 @@
 
 {{- $len := (len $list) }}
 {{ range $index, $value := $list }}
-	{{- if .Params.images }}
+	{{- if $allFormats }}
 		{{- $postPermalink := .Permalink }}
 		{{ range .Params.images }}
 			<li>
