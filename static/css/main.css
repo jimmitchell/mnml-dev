@@ -747,8 +747,8 @@ footer p {
 }
 
 .to-top {
-  background: var(--link);
-  border-radius: var(--border-radius);
+  background: var(--text);
+  border-radius: 50%;
   border: none;
   bottom: 1.75rem;
   box-shadow: none;
