@@ -8,13 +8,13 @@
 {{ range $index, $value := $list }}
 	{{- if .Params.photos -}}
 		{{- $postPermalink := .Permalink }}
-		<li>
-			{{ range .Params.photos }}
+		{{ range .Params.photos }}
+			<li>
 				<a href="{{ $postPermalink }}">
 					<img src="{{ . }}" loading="lazy" />
 				</a>
-			{{ end }}
-		</li>
+			</li>
+		{{ end }}
 	{{- end -}}
 {{- end -}}
 </ul>
