@@ -1,13 +1,11 @@
 {{- $searchValue := index .Site.Params "search_results" }}
 {{- if and (ne $searchValue "") (ne $searchValue nil) }}
     {{- $searchValue := $searchValue }}
-{{- else }}
-    {{- $searchValue := "5" }}  <!-- Default value -->
 {{- end }}
 
 <script language="javascript">
     var archive_results = {};
-    var maxResults = {{ $searchValue | default "5" }};  // Use Hugo's default function to ensure a valid number
+    var maxResults = {{ (add $searchValue 0) | default 5 }};  // Convert to number and set default
 
     function runSearch(q) {
         var results_node = document.getElementById("list_results");
