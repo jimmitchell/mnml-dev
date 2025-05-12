@@ -53,6 +53,11 @@
 		  "type": "boolean"
 		},
 		{
+		  "field": "params.show_categories",
+		  "label": "Show categories on archives page",
+		  "type": "boolean"
+		},
+		{
 		  "field": "params.photos_category",
 		  "label": "Photos category",
 		  "type": "string",
@@ -76,11 +81,6 @@
 		{
 		  "field": "params.single_image",
 		  "label": "Show first post image only",
-		  "type": "boolean"
-		},
-		{
-		  "field": "params.show_categories",
-		  "label": "Show categories on archives page",
 		  "type": "boolean"
 		},
 		{
