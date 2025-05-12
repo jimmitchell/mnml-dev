@@ -16,6 +16,7 @@ A clean and simple minimalist Micro.blog theme.
 - Display full posts on category pages
 - Custom photos page category setting.
 - Grid or Masonry photo layout options.
+- Show all image formats on photos page.
 - Wide or narrow photo page layout setting.
 - Use a custom site icon of your choosing.
 - Hide the site icon altogether if you choose.
