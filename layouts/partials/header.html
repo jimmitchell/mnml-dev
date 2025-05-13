@@ -9,9 +9,9 @@
         <ul class="nav-menu">
         {{- range .Site.Menus.main }}
             {{- if .Page.Params.redirect_url }}
-            <li class="nav-item"><a href="{{ .Page.Params.redirect_url }}" class="{{ lower .Page.Slug }}">{{ .Name }}</a></li>
+            <li class="nav-item"><a href="{{ .Page.Params.redirect_url }}" class="{{ lower .Name | urlize }}">{{ .Name }}</a></li>
             {{- else }}
-            <li class="nav-item"><a href="{{ .URL | relLangURL | safeURL }}" class="{{ lower .Page.Slug }}">{{ .Name }}</a></li>
+            <li class="nav-item"><a href="{{ .URL | relLangURL | safeURL }}" class="{{ lower .Name | urlize }}">{{ .Name }}</a></li>
             {{- end }}
         {{- end }}
         </ul>
