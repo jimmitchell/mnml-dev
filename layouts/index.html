@@ -15,7 +15,7 @@
     {{- range $paginator.Pages  }}
     <article>
     {{- if .Title }}
-        <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a></h2>
         <p class="post-date">{{- if .Site.Params.use_short_date }}{{ .Date | time.Format ":date_short" }}{{- else }}{{ .Date | time.Format ":date_full" }}{{- end }}</p>
         {{- if .Site.Params.show_full_post }}
         {{ .Content }}
