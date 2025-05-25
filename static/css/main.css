@@ -175,18 +175,19 @@ sup {
 }
 
 figure {
-  font-size: 1.4rem;
-  color: var(--accent-3);
-  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 figcaption {
-  background: var(--accent-2);
-  font-size: 1.4rem;
+  background: var(--accent-1);
+  border-radius: var(--border-radius);
   color: var(--accent-3);
-  text-align: center;
   display: block;
+  font-size: 1.4rem;
+  margin: .5rem 0;
   padding: 1rem;
+  text-align: center;
 }
 
 hr {
