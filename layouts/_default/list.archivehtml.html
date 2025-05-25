@@ -1,6 +1,6 @@
 {{- define "main" }}
 <main class="archive">
-	<article class="{{ range $index, $category := .Params.categories }}{{ if gt $index 0 }} {{ end }}{{ $category | lower | urlize }}{{ end }}">
+	<article>
 		<h1 class="page-title">{{ .Title | safeHTML }}</h1>
 		{{- $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 		{{- if and (.Site.Params.show_categories) (gt (len $list) 0) }}
