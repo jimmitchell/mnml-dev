@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main class="photos{{ if .Site.Params.full_width_photos }}{{ print "-wide" }}{{ end }}">
-	<article>
+	<article class="{{ range $index, $category := .Params.categories }}{{ if gt $index 0 }} {{ end }}{{ $category | lower | urlize }}{{ end }}">
 	{{- if .Site.Params.masonry_layout }}
 	{{ partial "photos-masonry.html" . }}
 	{{- else }}
