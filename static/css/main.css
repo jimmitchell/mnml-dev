@@ -64,6 +64,7 @@ h5,
 h6,
 b,
 strong,
+dt,
 th {
   font-weight: var(--font-weight-bold);
 }
@@ -177,6 +178,15 @@ figure {
   font-size: 1.4rem;
   color: var(--accent-3);
   text-align: center;
+}
+
+figcaption {
+  background: var(--accent-2);
+  font-size: 1.4rem;
+  color: var(--accent-3);
+  text-align: center;
+  display: block;
+  padding: 1rem;
 }
 
 hr {
