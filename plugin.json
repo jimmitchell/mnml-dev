@@ -70,7 +70,7 @@
 		},
 		{
 		  "field": "params.all_formats",
-		  "label": "Display all image formats (jpg, png, etc.).",
+		  "label": "Display all image formats (jpg, png, webp, etc.).",
 		  "type": "boolean"
 		},
 		{
