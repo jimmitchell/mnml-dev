@@ -454,6 +454,7 @@ single article {
 
 .sep {
   color: var(--accent-3);
+  margin: 0 .25rem;
 }
 
 article img,
