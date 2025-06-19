@@ -12,6 +12,7 @@
 
 @madia (prefers-color-scheme: light) {
   :root {
+    color-scheme: light;
     --background: #ffffff;
     --text: #42444a;
     --link: #0d88d8;
@@ -25,6 +26,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    color-scheme: dark;
     --background: #20232a;
     --text: #f7f7f7;
     --link: #45c8f7;
