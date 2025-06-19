@@ -10,7 +10,7 @@
   --border-radius: 0.6rem;
 }
 
-@madia (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;
     --background: #ffffff;
