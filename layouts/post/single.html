@@ -46,6 +46,16 @@
             {{- end }}
         </ul>
         {{- end }}
+        
+        {{ with site.RegularPages.Related . | first 3 }}
+          <h4 style="margin-bottom:-3rem;margin-top:5rem">Related Posts</h4>
+          <ul class="archive-list">
+            {{ range . }}
+              <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+            {{ end }}
+          </ul>
+        {{ end }}
+        
     </article>
     {{- if .Site.Params.include_conversation }}
         <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
