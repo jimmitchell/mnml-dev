@@ -1,18 +1,7 @@
 {{- define "main" }}
 <main class="archive">
 	<article>
-		<div class="header-container">
-			<h1 class="page-title">{{ .Title | safeHTML }}</h1>
-			<div class="archive_years">
-				<select id="archive_popup">
-					<option value="all">All Years</option>
-					{{ range $grouped }}
-					<option value="{{ .Key }}">{{ .Key }}</option>
-					{{ end }}
-				</select>
-			</div>
-		</div>
-
+		<h1 class="page-title">{{ .Title | safeHTML }}</h1>
 		{{- $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 		{{- if and (.Site.Params.show_categories) (gt (len $list) 0) }}
 		<div class="archive-categories">
@@ -26,6 +15,15 @@
 
 		{{- $posts := where .Site.RegularPages "Type" "post" }}
 		{{- $grouped := $posts.GroupByDate "2006" }}
+
+		<div class="archive_years">
+			<select id="archive_popup">
+				<option value="all">All Years</option>
+				{{ range $grouped }}
+				<option value="{{ .Key }}">{{ .Key }}</option>
+				{{ end }}
+			</select>
+		</div>
 
 		<div class="h-feed archive_posts">
 			{{- range $grouped }}
@@ -75,22 +73,6 @@
 				filterPosts();
 			})();
 		</script>
-
-		<style>
-			.header-container {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-			}
-
-			.page-title {
-				margin: 0;
-			}
-
-			.archive_years {
-				margin-left: 20px;
-			}
-		</style>
 	</article>
 </main>
 {{- end }}
