@@ -17,7 +17,7 @@
 		{{- $grouped := $posts.GroupByDate "2006" }}
 
 		<div class="archive_years">
-			<label for="archive_popup">Display posts from:</label>
+			<label for="archive_popup">Show posts from:</label>
 			<select id="archive_popup">
 				<option value="all">All Years</option>
 				{{ range $grouped }}
