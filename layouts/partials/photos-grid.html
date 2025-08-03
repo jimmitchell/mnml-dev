@@ -26,12 +26,14 @@
 		{{- if $singleImage }}
 			{{- with (first 1 .Params.images) }}
 				{{ range . }}
-				{{- $groupedImages = merge $groupedImages (dict $year (append (index $groupedImages $year) (dict "src" . "permalink" $postPermalink))) }}
+				{{- $currentImages := index $groupedImages $year }}
+				{{- $groupedImages = merge $groupedImages (dict $year (append $currentImages (dict "src" . "permalink" $postPermalink))) }}
 				{{ end }}
 			{{- end }}
 		{{- else }}
 			{{ range .Params.images }}
-			{{- $groupedImages = merge $groupedImages (dict $year (append (index $groupedImages $year) (dict "src" . "permalink" $postPermalink))) }}
+			{{- $currentImages := index $groupedImages $year }}
+			{{- $groupedImages = merge $groupedImages (dict $year (append $currentImages (dict "src" . "permalink" $postPermalink))) }}
 			{{ end }}
 		{{- end }}
 	{{- else }}
@@ -43,12 +45,14 @@
 		{{- if $singleImage }}
 			{{- with (first 1 .Params.photos) }}
 				{{ range . }}
-				{{- $groupedImages = merge $groupedImages (dict $year (append (index $groupedImages $year) (dict "src" . "permalink" $postPermalink))) }}
+				{{- $currentImages := index $groupedImages $year }}
+				{{- $groupedImages = merge $groupedImages (dict $year (append $currentImages (dict "src" . "permalink" $postPermalink))) }}
 				{{ end }}
 			{{- end }}
 		{{- else }}
 			{{ range .Params.photos }}
-			{{- $groupedImages = merge $groupedImages (dict $year (append (index $groupedImages $year) (dict "src" . "permalink" $postPermalink))) }}
+			{{- $currentImages := index $groupedImages $year }}
+			{{- $groupedImages = merge $groupedImages (dict $year (append $currentImages (dict "src" . "permalink" $postPermalink))) }}
 			{{ end }}
 		{{- end }}
 	{{- end }}
