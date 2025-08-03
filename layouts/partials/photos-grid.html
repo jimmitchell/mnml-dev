@@ -15,50 +15,53 @@
 	{{- $list = where .Site.Pages ".Params.photos" "!=" nil }}
 {{- end }}
 {{- $len := (len $list) }}
+{{- $groupedImages := dict }}
 {{ range $index, $value := $list }}
 	{{- if $allFormats }}
 		{{- $postPermalink := .Permalink }}
+		{{- $year := .Date.Format "2006" }}
+		{{- if not (hasKey $groupedImages $year) }}
+			{{- $groupedImages = merge $groupedImages (dict $year (slice)) }}
+		{{- end }}
 		{{- if $singleImage }}
 			{{- with (first 1 .Params.images) }}
 				{{ range . }}
-				<li>
-					<a href="{{ $postPermalink }}">
-						<img src="{{ . }}" loading="lazy" />
-					</a>
-				</li>
+				{{- $groupedImages = merge $groupedImages (dict $year (append (index $groupedImages $year) (dict "src" . "permalink" $postPermalink))) }}
 				{{ end }}
 			{{- end }}
 		{{- else }}
 			{{ range .Params.images }}
-			<li>
-				<a href="{{ $postPermalink }}">
-					<img src="{{ . }}" loading="lazy" />
-				</a>
-			</li>
+			{{- $groupedImages = merge $groupedImages (dict $year (append (index $groupedImages $year) (dict "src" . "permalink" $postPermalink))) }}
 			{{ end }}
 		{{- end }}
 	{{- else }}
 		{{- $postPermalink := .Permalink }}
+		{{- $year := .Date.Format "2006" }}
+		{{- if not (hasKey $groupedImages $year) }}
+			{{- $groupedImages = merge $groupedImages (dict $year (slice)) }}
+		{{- end }}
 		{{- if $singleImage }}
 			{{- with (first 1 .Params.photos) }}
 				{{ range . }}
-				<li>
-					<a href="{{ $postPermalink }}">
-						<img src="{{ . }}" loading="lazy" />
-					</a>
-				</li>
+				{{- $groupedImages = merge $groupedImages (dict $year (append (index $groupedImages $year) (dict "src" . "permalink" $postPermalink))) }}
 				{{ end }}
 			{{- end }}
 		{{- else }}
 			{{ range .Params.photos }}
-			<li>
-				<a href="{{ $postPermalink }}">
-					<img src="{{ . }}" loading="lazy" />
-				</a>
-			</li>
+			{{- $groupedImages = merge $groupedImages (dict $year (append (index $groupedImages $year) (dict "src" . "permalink" $postPermalink))) }}
 			{{ end }}
 		{{- end }}
 	{{- end }}
+{{- end }}
+{{ range $year, $images := $groupedImages }}
+	<h3 class="archive-range" data-year="{{ $year }}">{{ $year }}</h3>
+	{{ range $images }}
+	<li>
+		<a href="{{ .permalink }}">
+			<img src="{{ .src }}" loading="lazy" />
+		</a>
+	</li>
+	{{ end }}
 {{- end }}
 </ul>
 <script>
