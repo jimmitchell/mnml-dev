@@ -20,7 +20,7 @@
 	{{- if $allFormats }}
 		{{- $postPermalink := .Permalink }}
 		{{- $year := .Date.Format "2006" }}
-		{{- if not (hasKey $groupedImages $year) }}
+		{{- if not (isset $groupedImages $year) }}
 			{{- $groupedImages = merge $groupedImages (dict $year (slice)) }}
 		{{- end }}
 		{{- if $singleImage }}
@@ -37,7 +37,7 @@
 	{{- else }}
 		{{- $postPermalink := .Permalink }}
 		{{- $year := .Date.Format "2006" }}
-		{{- if not (hasKey $groupedImages $year) }}
+		{{- if not (isset $groupedImages $year) }}
 			{{- $groupedImages = merge $groupedImages (dict $year (slice)) }}
 		{{- end }}
 		{{- if $singleImage }}
