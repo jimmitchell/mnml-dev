@@ -27,7 +27,7 @@
 			{{- with (first 1 .Params.images) }}
 				{{ range . }}
 				{{- $currentImages := index $groupedImages $year }}
-				{{- if not (kindIs "slice" $currentImages) }}
+				{{- if not (reflect.IsSlice $currentImages) }}
 					{{- $currentImages = slice }}
 				{{- end }}
 				{{- $groupedImages = merge $groupedImages (dict $year (append $currentImages (dict "src" . "permalink" $postPermalink))) }}
@@ -36,7 +36,7 @@
 		{{- else }}
 			{{ range .Params.images }}
 			{{- $currentImages := index $groupedImages $year }}
-			{{- if not (kindIs "slice" $currentImages) }}
+			{{- if not (reflect.IsSlice $currentImages) }}
 				{{- $currentImages = slice }}
 			{{- end }}
 			{{- $groupedImages = merge $groupedImages (dict $year (append $currentImages (dict "src" . "permalink" $postPermalink))) }}
@@ -52,7 +52,7 @@
 			{{- with (first 1 .Params.photos) }}
 				{{ range . }}
 				{{- $currentImages := index $groupedImages $year }}
-				{{- if not (kindIs "slice" $currentImages) }}
+				{{- if not (reflect.IsSlice $currentImages) }}
 					{{- $currentImages = slice }}
 				{{- end }}
 				{{- $groupedImages = merge $groupedImages (dict $year (append $currentImages (dict "src" . "permalink" $postPermalink))) }}
@@ -61,7 +61,7 @@
 		{{- else }}
 			{{ range .Params.photos }}
 			{{- $currentImages := index $groupedImages $year }}
-			{{- if not (kindIs "slice" $currentImages) }}
+			{{- if not (reflect.IsSlice $currentImages) }}
 				{{- $currentImages = slice }}
 			{{- end }}
 			{{- $groupedImages = merge $groupedImages (dict $year (append $currentImages (dict "src" . "permalink" $postPermalink))) }}
