@@ -7,7 +7,16 @@ main.photos-wide {
   margin: 0 auto;
   max-width: var(--photos-wide);
 }
-
+/*
+.archive-range {
+  margin: 2rem 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-3);
+  border-bottom: 2px solid var(--accent-2);
+  padding-bottom: 0.5rem;
+}
+*/
 .masonry-grid * {
   box-sizing: border-box;
   margin: 0;
