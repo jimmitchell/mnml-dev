@@ -12,68 +12,19 @@
 			</div>
 		</div>
 		{{- end }}
-
-		{{- $posts := where .Site.RegularPages "Type" "post" }}
+		{{- $posts := where  .Site.RegularPages "Type" "post" }}
 		{{- $grouped := $posts.GroupByDate "2006" }}
-
-		<div class="archive_years">
-			<label for="archive_popup">Show posts from:</label>
-			<select id="archive_popup">
-				<option value="all">All years</option>
-				{{ range $grouped }}
-				<option value="{{ .Key }}">{{ .Key }}</option>
-				{{ end }}
-			</select>
-		</div>
-
-		<div class="h-feed archive_posts">
-			{{- range $grouped }}
-				<h3 class="archive-range" data-year="{{ .Key }}">{{ .Key }}</h3>
-				{{- range .Pages }}
-				<div class="post-container" data-year="{{ .Date.Format "2006" }}">
-					<p class="post-date h-entry">
-						<a href="{{ .Permalink }}">{{- if .Site.Params.use_short_date }}{{ .Date | time.Format ":date_short" }}{{- else }}{{ .Date | time.Format ":date_full" }}{{- end }} →</a>
-					</p>
-					<div class="entry">
-						<p>{{- if .Title }}<b>{{ .Title | safeHTML }}:</b>&nbsp;{{- end }}{{ .Summary | safeHTML | truncate 300  }}</p>
-					</div>
-				</div>
-				{{- end }}
+		{{- range $grouped }}
+			<h3 class="archive-range">{{ .Key }}</h3>
+			{{- range .Pages }}
+			<p class="post-date">
+				<a href="{{ .Permalink }}">{{- if .Site.Params.use_short_date }}{{ .Date | time.Format ":date_short" }}{{- else }}{{ .Date | time.Format ":date_full" }}{{- end }} →</a>
+			</p>
+			<div class="entry">
+				<p>{{- if .Title }}<b>{{ .Title | safeHTML }}:</b>&nbsp;{{- end }}{{ .Summary | safeHTML | truncate 300  }}</p>
+			</div>
 			{{- end }}
-		</div>
-
-		<script>
-			(function() {
-				const select = document.getElementById('archive_popup');
-
-				function filterPosts() {
-					const sel = select.value;
-					// show/hide each post container
-					document.querySelectorAll('.h-feed .post-container').forEach(el => {
-						el.style.display = (sel === "all" || el.getAttribute('data-year') === sel) ? '' : 'none';
-					});
-
-					// show/hide each year header based on whether any following post container is visible
-					document.querySelectorAll('.h-feed h3[data-year]').forEach(header => {
-						let next = header.nextElementSibling;
-						let keep = false;
-						while (next && !next.matches('h3[data-year]')) {
-							if (next.matches('.post-container') && (next.style.display != 'none')) {
-								keep = true; break;
-							}
-							next = next.nextElementSibling;
-						}
-						header.style.display = keep ? '' : 'none';
-					});
-				}
-
-				// on change, re-filter
-				select.addEventListener('change', filterPosts);
-
-				// initial filter
-				filterPosts();
-			})();
-		</script>
+		{{- end }}
 	</article>
 </main>
 {{- end }}

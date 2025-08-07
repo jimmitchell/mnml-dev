@@ -521,15 +521,6 @@ a.category:active {
   margin-top: 3rem;
 }
 
-.archive_years {
-  display: flex;
-  align-items: center;
-}
-
-.archive_years label {
-  margin-right: 10px;
-}
-
 .archive-range {
   border-bottom: 1px solid var(--accent-2);
   font-weight: var(--font-weight-bold);
