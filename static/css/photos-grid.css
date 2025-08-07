@@ -15,9 +15,9 @@ ul.grid * {
 }
 
 ul.grid {
-	display: grid;
+	display: grid !important;
 	gap: 1rem;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(3, 1fr) !important;
 	list-style: none;
 	margin: 0;
 	padding: 0;
