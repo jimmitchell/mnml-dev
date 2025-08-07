@@ -15,7 +15,6 @@
 {{- end }}
 {{- $len := (len $list) }}
 
-<ul class="grid">
 {{- $currentYearMonth := "" }}
 {{- range sort $list "Date" "desc" }}
 	{{- $year := .Date.Format "2006" }}
@@ -24,8 +23,10 @@
 	{{- $monthName := .Date.Format "January" }}
 	{{- if ne $currentYearMonth $yearMonth }}
 		{{- if ne $currentYearMonth "" }}
+		</ul>
 		{{- end }}
 		<h3 class="archive-range" data-year="{{ $year }}" data-year-month="{{ $yearMonth }}">{{ $monthName }} {{ $year }}</h3>
+		<ul class="grid">
 		{{- $currentYearMonth = $yearMonth }}
 	{{- end }}
 	{{- if $allFormats }}
