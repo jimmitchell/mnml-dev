@@ -27,60 +27,6 @@ main.photos-wide .masonry-grid {
   column-count: 4;
 }
 
-/* Horizontal masonry layout */
-.horizontal-masonry {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.horizontal-masonry li {
-  flex: 1 1 300px;
-  min-width: 250px;
-  max-width: 400px;
-  background: var(--accent-1);
-  border-radius: 1rem;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  position: relative;
-}
-
-.horizontal-masonry li::before {
-  color: var(--accent-3);
-  content: "Loading...";
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-.horizontal-masonry li.loaded::before {
-  display: none;
-}
-
-.horizontal-masonry img {
-  display: block;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  width: 100%;
-  height: auto;
-}
-
-.horizontal-masonry img.visible {
-  opacity: 1;
-}
-
-.horizontal-masonry img:hover {
-  -moz-filter: brightness(70%);
-  -webkit-filter: brightness(70%);
-  filter: brightness(70%);
-  transition: ease-in-out 0.25s;
-}
-
 .masonry-grid li {
   background: var(--accent-1);
   border-radius: 1rem;
@@ -127,12 +73,6 @@ main.photos-wide .masonry-grid {
   main.photos-wide .masonry-grid {
     column-count: 3;
   }
-  
-  .horizontal-masonry li {
-    flex: 1 1 250px;
-    min-width: 200px;
-    max-width: 350px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -140,23 +80,11 @@ main.photos-wide .masonry-grid {
   main.photos-wide .masonry-grid {
     column-count: 2;
   }
-  
-  .horizontal-masonry li {
-    flex: 1 1 200px;
-    min-width: 150px;
-    max-width: 300px;
-  }
 }
 
 @media (max-width: 480px) {
   main.photos .masonry-grid,
   main.photos-wide .masonry-grid {
     column-count: 1;
-  }
-  
-  .horizontal-masonry li {
-    flex: 1 1 100%;
-    min-width: 100%;
-    max-width: 100%;
   }
 }

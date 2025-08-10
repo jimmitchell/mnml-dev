@@ -16,7 +16,6 @@
 {{- $len := (len $list) }}
 
 {{- $currentYearMonth := "" }}
-{{- $allImages := slice }}
 {{- range sort $list "Date" "desc" }}
 	{{- $year := .Date.Format "2006" }}
 	{{- $month := .Date.Format "01" }}
@@ -35,12 +34,20 @@
 		{{- if $singleImage }}
 			{{- with (first 1 .Params.images) }}
 				{{ range . }}
-				{{- $allImages = $allImages | append (dict "src" . "link" $postPermalink "date" $.Date) }}
+				<li>
+					<a href="{{ $postPermalink }}">
+						<img src="{{ . }}" loading="lazy" />
+					</a>
+				</li>
 				{{ end }}
 			{{- end }}
 		{{- else }}
 			{{ range .Params.images }}
-			{{- $allImages = $allImages | append (dict "src" . "link" $postPermalink "date" $.Date) }}
+			<li>
+				<a href="{{ $postPermalink }}">
+					<img src="{{ . }}" loading="lazy" />
+				</a>
+			</li>
 			{{ end }}
 		{{- end }}
 	{{- else }}
@@ -48,29 +55,25 @@
 		{{- if $singleImage }}
 			{{- with (first 1 .Params.photos) }}
 				{{ range . }}
-				{{- $allImages = $allImages | append (dict "src" . "link" $postPermalink "date" $.Date) }}
+				<li>
+					<a href="{{ $postPermalink }}">
+						<img src="{{ . }}" loading="lazy" />
+					</a>
+				</li>
 				{{ end }}
 			{{- end }}
 		{{- else }}
 			{{ range .Params.photos }}
-			{{- $allImages = $allImages | append (dict "src" . "link" $postPermalink "date" $.Date) }}
+			<li>
+				<a href="{{ $postPermalink }}">
+					<img src="{{ . }}" loading="lazy" />
+				</a>
+			</li>
 			{{ end }}
 		{{- end }}
 	{{- end }}
 {{- end }}
 </ul>
-
-<!-- Horizontal masonry grid with all images -->
-<ul class="masonry-grid horizontal-masonry">
-{{- range sort $allImages "date" "desc" }}
-	<li>
-		<a href="{{ .link }}">
-			<img src="{{ .src }}" loading="lazy" />
-		</a>
-	</li>
-{{- end }}
-</ul>
-
 <script>
 	function debounce(func, wait) {
 		let timeout;
@@ -111,8 +114,6 @@
 	}, {
 		rootMargin: '50px'
 	});
-	
-	// Handle both masonry grids
 	document.querySelectorAll('.masonry-grid img').forEach(img => {
 		if (img.loading === 'lazy') {
 			observer.observe(img);
