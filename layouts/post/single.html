@@ -21,6 +21,23 @@
         <div class="e-content">
             {{ .Content }}
         </div>
+
+        {{- if .Title }}
+            {{ $currentCategories := .Params.categories }}
+            {{ $currentPost := . }}
+            {{ $relatedPosts := where (where (where .Site.RegularPages "Type" "post") ".Params.categories" "intersect" $currentCategories) ".Title" "!=" $currentPost.Title }}
+            {{ if gt (len $relatedPosts) 0 }}
+            <section class="related-posts">
+            <h4 style="margin-bottom:-3rem;">Related Posts</h4>
+            <ul class="archive-list">
+            {{ range first 3 $relatedPosts }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+            </ul>
+            </section>
+            {{ end }}
+        {{- end }}
+
         {{- if .Params.categories }}
         {{- with .GetTerms "categories" }}
         <p class="categories">
