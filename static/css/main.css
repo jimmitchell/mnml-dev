@@ -542,6 +542,11 @@ a.category:active {
   color: var(--background);
 }
 
+.microblog-category-intro {
+  border-bottom: 1px solid var(--accent-2);
+  margin-bottom: 4rem;
+}
+
 .microblog_narration_button {
   background: var(--accent-1);
   border-radius: var(--border-radius);
