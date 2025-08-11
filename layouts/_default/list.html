@@ -2,7 +2,7 @@
 <main>
     <h1 class="page-title">{{ .Title | safeHTML }}</h1>
     {{- with .Content }}
-    <div class="microblog-category-intro">{{ . }}</div>
+    <div class="microblog-category-intro">{{ . | safeHTML }}</div>
     {{- end }}
     {{- $paginator := .Paginate (where .Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 30) }}
     {{- range $paginator.Pages  }}
