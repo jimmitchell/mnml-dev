@@ -504,7 +504,6 @@ a.category:active {
 }
 
 .related-post-header {
-  border-bottom: 1px solid var(--accent-2);
   margin-bottom: 0;
   padding-bottom: 0.5rem;
 }
@@ -519,7 +518,7 @@ a.category:active {
 .related-post-list li {
   list-style: none;
   border-bottom: 1px solid var(--accent-2);
-  padding: 1rem 0;
+  padding: .5rem 0;
 }
 
 #list_results p {
