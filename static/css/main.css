@@ -796,6 +796,7 @@ footer p {
 }
 
 .to-top svg {
+  display: block;
   fill: var(--background);
 }
 
