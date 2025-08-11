@@ -545,6 +545,7 @@ a.category:active {
 .microblog-category-intro {
   border-bottom: 1px solid var(--accent-2);
   margin-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 
 .microblog_narration_button {
