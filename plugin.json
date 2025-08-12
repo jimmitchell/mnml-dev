@@ -54,9 +54,9 @@
 		},
 		{
 		  "field": "params.related_post_count",
-		  "label": "Display a number of related posts",
+		  "label": "Related post count",
 		  "type": "string",
-		  "placeholder": "Enter a number of related posts on to show on titled posts."
+		  "placeholder": "The number of related posts on to show on titled posts."
 		},
 		{
 		  "field": "params.category_full_post",
