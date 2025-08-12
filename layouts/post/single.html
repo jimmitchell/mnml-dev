@@ -33,7 +33,7 @@
         {{- end }}
 
         {{- if and (.Title) (ne .Site.Params.related_post_count) }}
-        {{- $relatedPostCount := .Site.Params.related_post_count }}
+        {{- $relatedPostCount := int .Site.Params.related_post_count }}
         {{- $currentCategories := .Params.categories }}
         {{- $relatedPosts := where
             (where
