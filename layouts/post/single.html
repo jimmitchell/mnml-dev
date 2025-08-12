@@ -42,7 +42,7 @@
             )
             ".Title" "not in" (slice "" .Title)
         }}
-        {{- if and (gt $relatedPostCount 0) (ne $relatedPosts) }}
+        {{- if and (gt (len $relatedPosts) 0) (".Title" "not in" (slice "" .Title)) }}
         <section class="related-posts">
             <h4 class="related-post-header">Related Posts</h4>
             <ul class="related-post-list">
