@@ -1,9 +1,12 @@
+// Get search results container and maxResults from data attribute
+var resultsContainer = document.getElementById("list_results");
+var maxResults = parseInt(resultsContainer.dataset.maxResults, 10) || 5;
+
+// Store fetched archive results
 var archive_results = {};
-var maxResults = {{- $.Site.Params.search_results | default 5 }};  // Store the maximum results to display
 
 function runSearch(q) {
-	var results_node = document.getElementById("list_results");
-	results_node.innerHTML = "";
+	resultsContainer.innerHTML = "";
 
 	if (q.length > 0) {
 		var resultsFound = false;
@@ -30,7 +33,6 @@ function runSearch(q) {
 				}
 
 				var s = item.content_text;
-
 				if (s.length > 200) {
 					s = s.substr(0, 200) + "...";
 				}
@@ -45,10 +47,9 @@ function runSearch(q) {
 				}
 
 				p_node.appendChild(text_node);
-				results_node.appendChild(p_node);
+				resultsContainer.appendChild(p_node);
 
 				resultCount++;
-
 				resultsFound = true;
 
 				if (resultCount >= maxResults) {
@@ -57,13 +58,9 @@ function runSearch(q) {
 			}
 		}
 
-		if (resultsFound) {
-			results_node.style.display = "block";
-		} else {
-			results_node.style.display = "none";
-		}
+		resultsContainer.style.display = resultsFound ? "block" : "none";
 	} else {
-		results_node.style.display = "none";
+		resultsContainer.style.display = "none";
 	}
 }
 
@@ -75,7 +72,7 @@ function submitSearch(q) {
 	history.pushState({}, "", url);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 	fetch("/archive/index.json")
 		.then(response => response.json())
 		.then(data => {
