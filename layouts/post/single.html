@@ -21,7 +21,6 @@
         <div class="e-content">
             {{ .Content }}
         </div>
-
         {{- if .Params.categories }}
         {{- with .GetTerms "categories" }}
         <p class="categories">
@@ -31,29 +30,6 @@
         </p>
         {{- end }}
         {{- end }}
-
-        {{- if and (.Title) (ne .Site.Params.related_post_count) }}
-        {{- $relatedPostCount := int .Site.Params.related_post_count }}
-        {{- $currentCategories := .Params.categories }}
-        {{- $relatedPosts := where
-            (where
-                (where .Site.RegularPages "Type" "post")
-                ".Params.categories" "intersect" $currentCategories
-            )
-            ".Title" "not in" (slice "" .Title)
-        }}
-        {{- if gt (len $relatedPosts) 0 }}
-        <section class="related-posts">
-            <h4 class="related-post-header">Related Posts</h4>
-            <ul class="related-post-list">
-                {{ range first $relatedPostCount $relatedPosts }}
-                    <li><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></li>
-                {{ end }}
-            </ul>
-        </section>
-        {{- end }}
-        {{- end }}
-
         {{- if or (templates.Exists "partials/reply-by-email.html") (templates.Exists "partials/conversation-link.html") (templates.Exists "partials/reply-on-mastodon.html") (templates.Exists "partials/tinylytics.html") }}
         <ul class="reply-buttons">
             {{- if and (templates.Exists "partials/tinylytics.html") (.Site.Params.show_kudos) (ne (.Site.Params.site_id | default "") "") }}
@@ -72,7 +48,9 @@
         {{- end }}
     </article>
     {{- if .Site.Params.include_conversation }}
+    <div>
         <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
+    </div>
     {{- end }}
     {{- if or (.NextInSection) (.PrevInSection) }}
     <nav class="main-nav">
