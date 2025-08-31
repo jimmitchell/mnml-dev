@@ -509,6 +509,10 @@ a.category:active {
   color: var(--background);
 }
 
+.count {
+  color: var(--accent-2);
+}
+
 #list_results p {
   margin: 5rem 0;
 }
