@@ -63,11 +63,6 @@
 		  "type": "boolean"
 		},
 		{
-		  "field": "params.show_category_count",
-		  "label": "Show post count on archive page categories",
-		  "type": "boolean"
-		},
-		{
 		  "field": "params.photos_category",
 		  "label": "Photos category",
 		  "type": "string",
