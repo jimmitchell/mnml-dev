@@ -1030,10 +1030,6 @@ img.bookshelf__cover {
     margin-right: -1rem;
     width: calc(100% + 2rem);
   }
-  
-  .pinned-badge {
-    left: 0.3rem;
-  }
 
   .to-top {
     opacity: 100%;
