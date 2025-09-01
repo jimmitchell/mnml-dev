@@ -439,7 +439,7 @@ single article {
   background: var(--accent-1);
   border: 1px solid var(--accent-2);
   border-radius: var(--border-radius);
-  padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+  padding: 1rem 2.5rem 2.5rem 2.5rem;
   position: relative;
 }
 
