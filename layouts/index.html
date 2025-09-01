@@ -2,6 +2,13 @@
 <main>
     {{- $allPages := where .Site.Pages.ByDate.Reverse "Type" "post" }}
     
+    {{- $home_categories := slice }}
+    {{- if .Site.Params.home_category }}
+        {{- range split .Site.Params.home_category "," }}
+            {{- $home_categories = $home_categories | append (trim . " ") }}
+        {{- end }}
+    {{- end }}
+
     {{- $pinnedPost := false }}
     {{- if .Site.Params.pinned_category }}
         {{- $pinnedCategoryPages := where $allPages "Params.categories" "intersect" (slice .Site.Params.pinned_category) }}
@@ -9,6 +16,10 @@
     {{- end }}
 
     {{- $pages := $allPages }}
+    {{- if $home_categories }}
+        {{- $pages = where $allPages "Params.categories" "intersect" $home_categories }}
+    {{- end }}
+
     {{- $filteredPages := $pages }}
     {{- if $pinnedPost }}
         {{- $filteredPages = where $pages "Permalink" "not in" (slice (index $pinnedPost 0).Permalink) }}
