@@ -1024,6 +1024,16 @@ img.bookshelf__cover {
     height: 110px !important;
     width: 33% !important;
   }
+  
+  .pinned {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    width: calc(100% + 2rem);
+  }
+  
+  .pinned-badge {
+    left: 0.3rem;
+  }
 
   .to-top {
     opacity: 100%;
