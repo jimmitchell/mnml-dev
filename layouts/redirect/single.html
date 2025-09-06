@@ -1,6 +1,7 @@
 <html>
 <head>
-	<meta http-equiv="Refresh" content="5; url='{{ .Params.redirect }}'" />
+	<link href="{{ "css/main.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="preload stylesheet" as="style">
+	<meta http-equiv="Refresh" content="0; url='{{ .Params.redirect }}'" />
 </head>
-<body><p>Here's a pause...</p></body>
+<body></body>
 </html>
