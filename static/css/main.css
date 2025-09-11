@@ -889,33 +889,13 @@ a.tinylytics_webring {
   width: 24px;
 }
 
-/*
-.microblog_collection {
-  align-items: center;
-  justify-content: center;
-  line-height: 0;
-  margin: 0 -3px !important;
-}
-
-.microblog_collection img {
-  border-radius: 1rem !important;
-  border: 3px solid transparent;
-  cursor: pointer;
-  display: inline !important;
-  height: 150px !important;
-  margin: 0 !important;
-  object-fit: cover;
-  padding: 0;
-  width: 25% !important;
-  transition: filter 0.25s ease-in-out;
-}
-*/
-
 .microblog_collection {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 1rem !important;
   width: 100% !important;
+  margin: 3rem auto !important;
+  width: 100%;
 }
 
 .microblog_collection img {
@@ -923,16 +903,22 @@ a.tinylytics_webring {
   height: auto !important;
   object-fit: cover !important;
   aspect-ratio: 1 / 1;
+  margin: 0;
 }
 
-/* Two columns at 600px or less */
+.microblog_collection img:hover {
+  -moz-filter: brightness(70%);
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+  transition: ease-in-out 0.25s;
+}
+
 @media (max-width: 600px) {
   .microblog_collection {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Single column at 375px or less */
 @media (max-width: 375px) {
   .microblog_collection {
     grid-template-columns: 1fr;
