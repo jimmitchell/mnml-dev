@@ -1015,12 +1015,7 @@ img.bookshelf__cover {
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-5px) rotate(-45deg);
   }
-/*
-  .microblog_collection img {
-    height: 110px !important;
-    width: 33% !important;
-  }
-*/  
+ 
   .pinned {
     margin-left: -1rem;
     margin-right: -1rem;
