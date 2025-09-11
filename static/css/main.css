@@ -912,16 +912,16 @@ a.tinylytics_webring {
 */
 
 .microblog_collection {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1rem !important;
+  width: 100% !important;
 }
 
 .microblog_collection img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
   aspect-ratio: 1 / 1;
 }
 
