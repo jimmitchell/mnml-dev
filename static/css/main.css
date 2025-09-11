@@ -895,7 +895,7 @@ a.tinylytics_webring {
   gap: 1rem !important;
   width: 100% !important;
   margin: 3rem auto !important;
-  width: 100%;
+  width: 100% !important;
 }
 
 .microblog_collection img {
@@ -903,7 +903,8 @@ a.tinylytics_webring {
   height: auto !important;
   object-fit: cover !important;
   aspect-ratio: 1 / 1;
-  margin: 0;
+  margin: 0 !important;
+  border-radius: var(--border-radius);
 }
 
 .microblog_collection img:hover {
