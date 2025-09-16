@@ -250,11 +250,10 @@ td:last-child {
   border-right: none;
 }
 
-th:hover,
-td:hover {
-  -moz-filter: brightness(90%);
-  -webkit-filter: brightness(90%);
-  filter: brightness(90%);
+tbody tr:hover {
+  -moz-filter: brightness(95%);
+  -webkit-filter: brightness(95%);
+  filter: brightness(95%);
   transition: ease-in-out 0.25s;
 }
 
