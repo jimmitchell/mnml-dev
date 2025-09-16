@@ -254,11 +254,14 @@ td:last-child {
   border-right: none;
 }
 
-tbody tr:hover,
-tbody tr:hover a {
+tbody tr:hover {
   background-color: var(--link);
   color: var(--background);
   transition: ease-in-out 0.25s;
+}
+
+tbody tr:hover a {
+  color: var(--background);
 }
 
 code,
