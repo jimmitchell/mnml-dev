@@ -250,6 +250,14 @@ td:last-child {
   border-right: none;
 }
 
+th:hover,
+td:hover {
+  -moz-filter: brightness(90%);
+  -webkit-filter: brightness(90%);
+  filter: brightness(90%);
+  transition: ease-in-out 0.25s;
+}
+
 code,
 kbd,
 pre,
