@@ -229,13 +229,24 @@ table {
 
 th {
   background: var(--accent-1);
+  border-bottom: 2px solid var(--accent-2);
+}
+
+tbody tr:nth-child(even) {
+  background: var(--accent-1);
 }
 
 th,
 td {
-  border: 1px solid var(--accent-2);
-  padding: 6px;
+  border-right: 1px solid var(--accent-2);
+  border-bottom: 1px solid var(--accent-2);
+  padding: 8px;
   text-align: left;
+}
+
+th:last-child,
+td:last-child {
+  border-right: none;
 }
 
 code,
