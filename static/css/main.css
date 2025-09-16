@@ -255,9 +255,8 @@ td:last-child {
 }
 
 tbody tr:hover {
-  -moz-filter: brightness(95%);
-  -webkit-filter: brightness(95%);
-  filter: brightness(95%);
+  background-color: var(--link);
+  color: var(--background);
   transition: ease-in-out 0.25s;
 }
 
