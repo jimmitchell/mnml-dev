@@ -262,6 +262,7 @@ tbody tr:hover {
 
 tbody tr:hover a {
   color: var(--background);
+  text-decoration: underline;
 }
 
 code,
