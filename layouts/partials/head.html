@@ -14,11 +14,11 @@
   <meta name="twitter:title" content="{{ or .Title .Site.Title | plainify }}">
   <meta name="twitter:card" content="summary">
   {{- if .IsHome }}
-  <meta name="description" content="{{ .Site.Params.itunes_description | plainify }}">
+  <meta name="description" content="{{ .Site.Params.itunes_description | truncate 160 | plainify }}">
   <meta name="twitter:description" content="{{ .Site.Params.itunes_description | truncate 125 | plainify }}">
   <meta name="og:description" content="{{ .Site.Params.itunes_description | truncate 65 | plainify }}">
   {{- else }}
-  <meta name="description" content="{{ or .Summary .Content | plainify }}">
+  <meta name="description" content="{{ or .Summary .Content | truncate 160 | plainify }}">
   <meta property="og:description" content="{{ or .Summary .Content | truncate 65 | plainify }}">
   <meta name="twitter:description" content="{{ or .Summary .Content | truncate 125 | plainify }}">
   {{- end }}
