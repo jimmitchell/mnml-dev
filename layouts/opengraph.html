@@ -1,4 +1,4 @@
-<div data-avatar-background="#3d4149" style="background-color:#3d4149;padding:20px;padding-left:0;" data-content-background="#3d4149">
+<div data-avatar-background="#3d4149" style="background-color:#3d4149;padding:20px;font-family:GTW,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height: 1.8;" data-content-background="#3d4149" data-avatar-url="{{ or .Site.Params.custom_avatar .Site.Author.avatar }}">
 	<h1 style="font-size:22px;color:#fff;">{{ or .Title .Site.Title }}</h1>
-	<p style="font-size: 18px;color:#fff;">{{ or .Summary .Content }}</p>
+	<p style="font-size:18px;color:#fff;">{{ or .Summary .Content }}</p>
 </div>
