@@ -1,12 +1,4 @@
-<div data-avatar-background="#3d4149" style="background-color:#3d4149;padding:25px;padding-left:0;" data-content-background="#3d4149">
-{{- if .Title }}
-<b style="font-size:22px;color:#fff;font-family:GTW,Helvetica,Arial;">{{ .Title }}</b>
-{{- else }}
-<b style="font-size: 22px;color:#fff;font-family:GTW,Helvetica,Arial;">{{ .Site.Title }}</b>
-{{- end }}
-{{- if .Summary }}
-<p style="font-size: 18px;color:#fff;font-family:GTW,Helvetica,Arial;">{{ .Summary }}</p>
-{{- else }}
-<p style="font-size: 18px;color:#fff;font-family:GTW,Helvetica,Arial;">{{ .Content }}</p>
-{{- end }}
+<div data-avatar-background="#3d4149" style="background-color:#3d4149;padding:20px;padding-left:0;" data-content-background="#3d4149">
+	<h1 style="font-size:22px;color:#fff;">{{ or .Title .Site.Title }}</h1>
+	<p style="font-size: 18px;color:#fff;">{{ or .Summary .Content }}</p>
 </div>
