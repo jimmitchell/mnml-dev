@@ -4,5 +4,9 @@
 {{- else }}
 <b style="font-size: 24px;color:#fff;">{{ .Site.Title }}</b>
 {{- end }}
+{{- if .Summary }}
 <p style="font-size: 18px;color:#fff;">{{ .Summary }}</p>
+{{- else }}
+<p style="font-size: 18px;color:#fff;">{{ .Content }}</p>
+{{- end }}
 </div>
