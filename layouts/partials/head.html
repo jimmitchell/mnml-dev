@@ -10,17 +10,17 @@
   <link rel="preload" href="/fonts/GT-W-Bold-Oblique.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
   
   <!-- opengraph -->
-  <meta property="og:title" content="{{ or ( .Title .Site.Title ) | truncate 55 | plainify }}">
-  <meta name="twitter:title" content="{{ or ( .Title .Site.Title ) | plainify }}">
+  <meta property="og:title" content="{{ or .Title .Site.Title | truncate 55 | plainify }}">
+  <meta name="twitter:title" content="{{ or .Title .Site.Title | plainify }}">
   <meta name="twitter:card" content="summary">
   {{- if .IsHome }}
   <meta name="description" content="{{ .Site.Params.itunes_description | plainify }}">
   <meta name="twitter:description" content="{{ .Site.Params.itunes_description | truncate 125 | plainify }}">
   <meta name="og:description" content="{{ .Site.Params.itunes_description | truncate 65 | plainify }}">
   {{- else }}
-  <meta name="description" content="{{ or ( .Summary .Content ) | plainify }}">
-  <meta property="og:description" content="{{ or ( .Summary .Content ) | truncate 65 | plainify }}">
-  <meta name="twitter:description" content="{{ or ( .Summary .Content ) | truncate 125 | plainify }}">
+  <meta name="description" content="{{ or .Summary .Content | plainify }}">
+  <meta property="og:description" content="{{ or .Summary .Content | truncate 65 | plainify }}">
+  <meta name="twitter:description" content="{{ or .Summary .Content | truncate 125 | plainify }}">
   {{- end }}
   
   {{- if .Params.photos }}  
