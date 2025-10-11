@@ -570,7 +570,6 @@ single article {
   margin: 0 .25rem;
 }
 
-article img,
 article video {
   border-radius: var(--border-radius);
   display: block;
@@ -580,9 +579,11 @@ article video {
   max-width: 100%;
 }
 
+article img,
 article img.align-left,
 article img.align-right,
 article img.align-center {
+  border-radius: var(--border-radius);
   display: inline-block;
   width: auto;
   height: auto;
