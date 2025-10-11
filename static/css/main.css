@@ -579,10 +579,7 @@ article video {
   max-width: 100%;
 }
 
-article img,
-article img.align-left,
-article img.align-right,
-article img.align-center {
+article img {
   border-radius: var(--border-radius);
   display: inline-block;
   width: auto;
@@ -590,20 +587,29 @@ article img.align-center {
 }
 
 article img.align-left {
-  text-align: left;
+  float: left;
 }
 
 article img.align-right {
-  text-align: right;
+  float: right;
+}
+
+article image.align-left::after,
+article img.align-right::after {
+  clear: both;
 }
 
 article img.align-center {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 article img.full-width {
   width: 100%;
   margin: 3rem auto;
+  display: block;
 }
 
 article img.overflow {
