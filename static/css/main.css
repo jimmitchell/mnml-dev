@@ -594,8 +594,8 @@ article img.align-right {
   float: right;
 }
 
-article image.align-left::after,
-article img.align-right::after {
+article img.align-left:after,
+article img.align-right:after {
   clear: both;
 }
 
