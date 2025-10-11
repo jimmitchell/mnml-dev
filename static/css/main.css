@@ -580,12 +580,12 @@ article video {
   max-width: 100%;
 }
 
-/* article img {
-  border-radius: var(--border-radius);
-  display: inline-block;
+article img.alignnone {
+  display: unset;
   width: auto;
   height: auto;
-} */
+  max-width: 100%;
+}
 
 article img.alignleft {
   display: unset;
