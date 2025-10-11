@@ -581,10 +581,11 @@ article video {
 }
 
 article img.alignnone {
-  display: unset;
+  display: inline;
   width: auto;
   height: auto;
   max-width: 100%;
+  margin: 1rem 0;
 }
 
 article img.alignleft {
@@ -607,8 +608,8 @@ article img.alignright {
   height: auto;
 }
 
-article img.alignleft:after,
-article img.alignright:after,
+article img.alignleft::after,
+article img.alignright::after,
 .microblog_book:after {
   clear: both;
   content: "";
