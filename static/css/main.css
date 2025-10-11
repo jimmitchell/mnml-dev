@@ -622,9 +622,9 @@ article img.fullwidth {
 }
 
 article img.overflow {
-  margin: 3rem -2rem;
-  width: calc(100% + 4rem);
-  max-width: calc(100% + 4rem);
+  margin: 3rem -3rem;
+  width: calc(100% + 6rem);
+  max-width: calc(100% + 6rem);
   display: block;
 }
 
@@ -635,7 +635,6 @@ article img.overflow {
     max-width: calc(100% + 2rem);
   }
 }
-
 
 article ul li,
 article ol li {

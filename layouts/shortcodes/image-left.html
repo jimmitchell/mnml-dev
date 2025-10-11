@@ -1,0 +1,3 @@
+{{- $src := index .Params 0 }}
+{{- $alt := index .Params 1 }}
+<img src="{{ $src }}"{{ if $alt }} alt="{{ $alt }}"{{ end }} class="alignleft" />
