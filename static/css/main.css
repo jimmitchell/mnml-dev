@@ -586,28 +586,36 @@ article img {
   height: auto;
 }
 
-article img.align-left {
+article img.alignleft {
   float: left;
+  margin: 8px 15px 1em 0;
+  max-width: 100%;
+  text-align: left;
 }
 
-article img.align-right {
+article img.alignright {
   float: right;
+  margin: 8px 0 1em 15px;
+  max-width: 100%;
+  text-align: right;
 }
 
-.clearfix::after {
-  content: "";
+article img.alignleft:after,
+article img.alignright:after,
+.microblog_book:after {
   clear: both;
+  content: " ";
   display: table;
 }
 
-article img.align-center {
+article img.aligncenter {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-article img.full-width {
+article img.fullwidth {
   width: 100%;
   margin: 3rem auto;
   display: block;
