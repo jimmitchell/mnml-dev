@@ -594,9 +594,11 @@ article img.align-right {
   float: right;
 }
 
-article img.align-left:after,
-article img.align-right:after {
+article img.align-left::after,
+article img.align-right::after {
+  content: "";
   clear: both;
+  display: table;
 }
 
 article img.align-center {
