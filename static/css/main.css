@@ -588,14 +588,14 @@ article img {
 
 article img.alignleft {
   float: left;
-  margin:1rem 2rem 1rem 0;
+  margin: .7rem 2rem 1rem 0;
   max-width: 100%;
   text-align: left;
 }
 
 article img.alignright {
   float: right;
-  margin: 1rem 0 1rem 2rem;
+  margin: .7rem 0 1rem 2rem;
   max-width: 100%;
   text-align: right;
 }
@@ -1145,6 +1145,7 @@ div.e-content {
   border: 1px solid var(--accent-2);
   object-fit: contain;
   float: right;
+  text-align: right;
   max-width: 7rem !important;
 }
 
