@@ -594,8 +594,7 @@ article img.align-right {
   float: right;
 }
 
-article img.align-left::after,
-article img.align-right::after {
+.clearfix::after {
   content: "";
   clear: both;
   display: table;
