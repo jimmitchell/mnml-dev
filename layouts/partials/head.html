@@ -35,13 +35,8 @@
   {{- end }}
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="author" href="humans.txt" />
-  
-  {{- $fonts := resources.Get "css/fonts.css" | fingerprint }}
-  <link rel="stylesheet" href="{{$fonts.RelPermalink}}" rel="preload stylesheet" as="style">
-  
-  {{- $main := resources.Get "css/main.css" | fingerprint }}
-  <link rel="stylesheet" href="{{$main.RelPermalink}}" rel="preload stylesheet" as="style">
-  
+  <link href="{{ "css/fonts.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="preload stylesheet" as="style">
+  <link href="{{ "css/main.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="preload stylesheet" as="style">
   {{- if .Site.Params.masonry_layout }}
   <link href="{{ "css/photos-masonry.css" | relURL }}?{{ .Site.Params.theme_seconds }}"rel="preload stylesheet" as="style">
   {{- else }}
