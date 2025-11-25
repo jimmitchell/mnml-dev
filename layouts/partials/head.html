@@ -36,10 +36,10 @@
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="author" href="humans.txt" />
   
-  {{- $fonts := resources.Get "css/fonts.css" | minify | fingerprint }}
+  {{- $fonts := resources.Get "css/fonts.css" | fingerprint }}
   <link rel="stylesheet" href="{{$fonts.RelPermalink}}" rel="preload stylesheet" as="style">
   
-  {{- $main := resources.Get "css/main.css" | minify | fingerprint }}
+  {{- $main := resources.Get "css/main.css" | fingerprint }}
   <link rel="stylesheet" href="{{$main.RelPermalink}}" rel="preload stylesheet" as="style">
   
   {{- if .Site.Params.masonry_layout }}
